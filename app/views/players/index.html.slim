@@ -1,12 +1,12 @@
 table
   tr
-    th= link_to '#', players_path(params.merge(sort: 'number'))
-    th= link_to 'Name', players_path(params.merge(sort: 'last_name'))
-    th= link_to 'Position', players_path(params.merge(sort: 'position'))
-    th= link_to 'Height', players_path(params.merge(sort: 'height'))
-    th= link_to 'Weight', players_path(params.merge(sort: 'weight'))
-    th= link_to 'Age', players_path(params.merge(sort: 'age'))
-    th= link_to 'Experience', players_path(params.merge(sort: 'experience'))
+    th #
+    th Name
+    th Position
+    th Height
+    th Weight
+    th Age
+    th Experience
     th Top Bidder
   - @players.each do |player|
     tr

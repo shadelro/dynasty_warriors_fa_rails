@@ -2,7 +2,7 @@ class PlayersController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @players = Player.all.order(player_params[:sort] || :last_name)
+    @players = Player.all
   end
 
   def show
@@ -13,6 +13,6 @@ class PlayersController < ApplicationController
   private
 
   def player_params
-    params.permit(:id, :sort)
+    params.permit(:id)
   end
 end
