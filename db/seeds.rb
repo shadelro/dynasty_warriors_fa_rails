@@ -5,16 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-# brent = User.find_or_create_by!(username: 'Brent', email: 'rbshadel@gmail.com') do |user|
-#   user.password = 'password'
-#   user.password_confirmation = 'password'
-# end
 
-# divi = User.find_or_create_by!(username: 'Divi', email: 'divi@gmail.com') do |user|
-#   user.password = 'password'
-#   user.password_confirmation = 'password'
-# end
-
+# Chicago Bears
 jared_allen = Player.find_or_create_by(
   number: 69,
   last_name: 'Allen',
@@ -248,6 +240,15 @@ matt_forte = Player.find_or_create_by(
   weight: 218,
   age: 28,
   experience: 7
+)
+brandon_marshall = Player.find_or_create_by(
+  number: 15,
+  last_name: 'Marshall',
+  first_name: 'Brandon',
+  position: 'WR',
+  weight: 218,
+  age: 30,
+  experience: 9
 )
 shea_mcclellin = Player.find_or_create_by(
   number: 50,
@@ -598,7 +599,3 @@ willie_young = Player.find_or_create_by(
   age: 28,
   experience: 5
 )
-
-# bid = Bid.find_or_create_by(user_id: brent.id, player_id: jay_cutler.id, amount: 1530000)
-# bid = Bid.find_or_create_by(user_id: divi.id, player_id: jay_cutler.id, amount: 1420000)
-# bid = Bid.find_or_create_by(user_id: divi.id, player_id: matt_forte.id, amount: 940230)
