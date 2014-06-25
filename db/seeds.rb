@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # Chicago Bears
+# http://www.chicagobears.com/team/roster.html
 jared_allen = Player.find_or_create_by(
   number: 69,
   last_name: 'Allen',
