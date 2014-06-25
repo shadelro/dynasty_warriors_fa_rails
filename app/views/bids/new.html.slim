@@ -1,0 +1,15 @@
+h1= "#{@player.first_name} #{@player.last_name}: #{@player.position}"
+h2 Bids
+table
+  tr
+    th Name
+    th Amount
+  - @player.bids.each do |bid|
+    tr
+      td= bid.user.name
+      td= number_to_currency(bid.amount, precision: 0)
+= form_tag bids_path
+  = hidden_field_tag :player_id, @player.id
+  = label_tag :amount, 'Amount'
+  = text_field_tag :amount
+  = submit_tag 'Bid'

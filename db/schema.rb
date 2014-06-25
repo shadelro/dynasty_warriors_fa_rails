@@ -13,6 +13,32 @@
 
 ActiveRecord::Schema.define(version: 20140625145714) do
 
+  create_table "bids", force: true do |t|
+    t.integer  "player_id"
+    t.integer  "user_id"
+    t.decimal  "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "players", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "position"
+    t.integer  "number"
+    t.integer  "height"
+    t.integer  "weight"
+    t.integer  "age"
+    t.integer  "experience"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "teams", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false

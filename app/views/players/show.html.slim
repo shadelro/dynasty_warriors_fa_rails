@@ -1,0 +1,16 @@
+h1= "#{@player.first_name} #{@player.last_name}: #{@player.position}"
+h2 Bids
+table
+  tr
+    th Name
+    th Amount
+  - @player.bids.sort_by(&:amount).reverse.each do |bid|
+    tr
+      td= bid.user.name
+      td= number_to_currency(bid.amount, precision: 0)
+- if @my_bid
+  p= link_to 'Change Bid', edit_bid_path(@my_bid)
+  p= button_to 'Cancel Bid', bid_path(@my_bid), method: :delete
+- else
+  p= link_to 'Make Bid', new_bid_path(player_id: @player.id)
+p= link_to 'Back', players_path

@@ -15,6 +15,7 @@ gem 'foundation-rails'
 gem 'slim-rails'
 gem 'unicorn'
 gem 'unicorn-rails'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_20]
@@ -22,7 +23,7 @@ group :development do
   gem 'quiet_assets'
   gem 'rails_layout'
 end
+
 group :development, :test do
-  gem 'pry-rails'
-  gem 'pry-rescue'
+  gem 'jazz_hands'
 end
