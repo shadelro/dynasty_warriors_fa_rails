@@ -14,13 +14,13 @@ class BidsController < ApplicationController
 
   def edit
     @bid = Bid.find_by(id: params[:id], user_id: current_user.id)
-    @player = Player.find(@bid.player_id)
+    @player = @bid.player
   end
 
   def update
-    @bid = Bid.find_by(id: params[:id], user_id: current_user.id)
-    @bid.amount = bid_params[:amount]
-    @bid.save
+    bid = Bid.find_by(id: params[:id], user_id: current_user.id)
+    bid.amount = bid_params[:amount]
+    bid.save
 
     flash[:notice] = 'Bid Changed'
     redirect_to players_path

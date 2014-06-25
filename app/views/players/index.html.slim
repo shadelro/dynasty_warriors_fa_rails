@@ -17,4 +17,4 @@ table
       td= player.weight
       td= player.age
       td= player.experience
-      td= player.bids.sort_by(&:amount).reverse.first.user.name if player.bids.any?
+      td= player.top_bidder.name
