@@ -1,4 +1,4 @@
-h1= "#{@player.first_name} #{@player.last_name}: #{@player.position}"
+h1= "#{@player.full_name}: #{@player.position}"
 h2 Bids
 table
   tr
@@ -13,4 +13,3 @@ table
   p= button_to 'Cancel Bid', bid_path(@my_bid), method: :delete
 - else
   p= link_to 'Make Bid', new_bid_path(player_id: @player.id)
-p= link_to 'Back', players_path

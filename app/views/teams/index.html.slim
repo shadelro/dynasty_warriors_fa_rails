@@ -1,0 +1,8 @@
+table
+  tr
+    th Rank
+    th Name
+  - @teams.each do |team|
+    tr
+      td= team.rank
+      td= link_to team.name, team_path(team)

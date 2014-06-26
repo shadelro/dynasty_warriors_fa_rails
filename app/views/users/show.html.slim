@@ -1,3 +1,4 @@
+h1= "#{@user.name}: #{@user.team.name} #{@user.team.rank}"
 table
   tr
     th #
@@ -8,7 +9,7 @@ table
     th Age
     th Experience
     th Top Bidder
-  - @players.each do |player|
+  - @user.bids.map(&:player).each do |player|
     tr
       td= player.number
       td= link_to player.full_name, player

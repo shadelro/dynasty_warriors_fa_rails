@@ -12,4 +12,8 @@ class Player < ActiveRecord::Base
   def top_bidder
     top_bidders.first || User.new
   end
+
+  def full_name
+    "#{last_name}, #{first_name}"
+  end
 end
