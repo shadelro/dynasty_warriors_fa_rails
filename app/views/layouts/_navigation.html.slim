@@ -4,7 +4,7 @@ nav.top-bar[data-topbar]
     li.name
       = link_to 'Team Rankings', teams_path
       = link_to 'Free Agency', players_path
-      = link_to 'My Team', user_path(current_user)
+      = link_to 'My Team', user_path(current_user) if current_user
     li.toggle-topbar.menu-icon
       a[href="#"]
         Menu
