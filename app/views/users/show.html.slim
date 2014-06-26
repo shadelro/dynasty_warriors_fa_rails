@@ -1,5 +1,7 @@
 - if @user.team
-  h1= "#{@user.name}"
+  h1
+    = image_tag @user.image
+    = @user.name
   h2= "#{@user.team.name} #{@user.team.rank}"
 - else
   p= link_to 'Create a team', new_team_path
