@@ -7,11 +7,13 @@ class Bid < ActiveRecord::Base
   validate :team_has_salary
 
   def update_salary
-    self.team.remaining_salary += (amount_was || 0) - self.amount
+    self.team.remaining_salary -= self.amount - (amount_was || 0)
     self.team.save
   end
 
   def team_has_salary
-    errors.add(:amount, "team doesn't have enough salary") if self.team.remaining_salary < self.amount
+    if self.team.remaining_salary < self.amount - (amount_was || 0)
+      errors.add(:amount, "team doesn't have enough salary")
+    end
   end
 end
