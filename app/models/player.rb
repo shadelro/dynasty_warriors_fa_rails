@@ -20,4 +20,8 @@ class Player < ActiveRecord::Base
   def height_display
     height && "#{height / 12}-#{height % 12}"
   end
+
+  def experience_display
+    experience && experience == 0 ? 'R' : experience
+  end
 end
