@@ -16,4 +16,8 @@ class Player < ActiveRecord::Base
   def full_name
     "#{last_name}, #{first_name}"
   end
+
+  def height_display
+    height && "#{height / 12}-#{height % 12}"
+  end
 end

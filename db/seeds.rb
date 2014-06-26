@@ -13,6 +13,7 @@ jared_allen = Player.find_or_create_by(
   last_name: 'Allen',
   first_name: 'Jared',
   position: 'DE',
+  height: 78,
   weight: 270,
   age: 32,
   experience: 11
@@ -22,6 +23,7 @@ david_bass = Player.find_or_create_by(
   last_name: 'Bass',
   first_name: 'David',
   position: 'DE',
+  height: 76,
   weight: 256,
   age: 23,
   experience: 2
@@ -31,6 +33,7 @@ josh_bellamy = Player.find_or_create_by(
   last_name: 'Bellamy',
   first_name: 'Josh',
   position: 'WR',
+  height: 72,
   weight: 206,
   age: 25,
   experience: 1
@@ -40,6 +43,7 @@ martellus_bennett = Player.find_or_create_by(
   last_name: 'Bennett',
   first_name: 'Martellus',
   position: ' TE',
+  height: 78,
   weight: 265,
   age: 27,
   experience: 7
@@ -49,6 +53,7 @@ taylor_boggs = Player.find_or_create_by(
   last_name: 'Boggs',
   first_name: 'Taylor',
   position: 'C',
+  height: 75,
   weight: 285,
   age: 27,
   experience: 2
@@ -58,6 +63,7 @@ cody_booth = Player.find_or_create_by(
   last_name: 'Booth',
   first_name: 'Cody',
   position: 'T',
+  height: 76,
   weight: 292,
   age: 23,
   experience: 0
@@ -67,6 +73,7 @@ jonathan_bostic = Player.find_or_create_by(
   last_name: 'Bostic',
   first_name: 'Jonathan',
   position: 'LB',
+  height: 73,
   weight: 246,
   age: 23,
   experience: 2
@@ -76,6 +83,7 @@ lance_briggs = Player.find_or_create_by(
   last_name: 'Briggs',
   first_name: 'Lance',
   position: 'LB',
+  height: 73,
   weight: 244,
   age: 33,
   experience: 12
@@ -85,6 +93,7 @@ eben_britton = Player.find_or_create_by(
   last_name: 'Britton',
   first_name: 'Eben',
   position: 'G',
+  height: 78,
   weight: 308,
   age: 26,
   experience: 6
@@ -94,6 +103,7 @@ james_brown = Player.find_or_create_by(
   last_name: 'Brown',
   first_name: 'James',
   position: 'T',
+  height: 76,
   weight: 306,
   age: 25,
   experience: 3
@@ -103,6 +113,7 @@ jermon_bushrod = Player.find_or_create_by(
   last_name: 'Bushrod',
   first_name: 'Jermon',
   position: 'T',
+  height: 77,
   weight: 315,
   age: 29,
   experience: 8
@@ -112,15 +123,17 @@ kadeem_carey = Player.find_or_create_by(
   last_name: 'Carey',
   first_name: "Ka'Deem",
   position: 'RB',
+  height: 69,
   weight: 207,
   age: 21,
   experience: 0
 )
-jimmy_lausen = Player.find_or_create_by(
+jimmy_clausen = Player.find_or_create_by(
   number: 8,
   last_name: 'Clausen',
   first_name: 'Jimmy',
   position: 'QB',
+  height: 74,
   weight: 210,
   age: 26,
   experience: 5
@@ -130,6 +143,7 @@ nate_collins = Player.find_or_create_by(
   last_name: 'Collins',
   first_name: 'Nate',
   position: 'DT',
+  height: 74,
   weight: 296,
   age: 26,
   experience: 5
@@ -139,6 +153,7 @@ chris_conte = Player.find_or_create_by(
   last_name: 'Conte',
   first_name: 'Chris',
   position: 'S',
+  height: 74,
   weight: 203,
   age: 25,
   experience: 4
@@ -148,6 +163,7 @@ jay_cutler = Player.find_or_create_by(
   last_name: 'Cutler',
   first_name: 'Jay',
   position: 'QB',
+  height: 75,
   weight: 220,
   age: 31,
   experience: 9
@@ -157,6 +173,7 @@ brian_de_la_puente = Player.find_or_create_by(
   last_name: 'de la Puente',
   first_name: 'Brian',
   position: 'C',
+  height: 75,
   weight: 306,
   age: 29,
   experience: 5
@@ -166,6 +183,7 @@ shaun_draugn = Player.find_or_create_by(
   last_name: 'Draughn',
   first_name: 'Shaun',
   position: 'RB',
+  height: 72,
   weight: 205,
   age: 26,
   experience: 2
@@ -175,6 +193,7 @@ james_dunbar = Player.find_or_create_by(
   last_name: 'Dunbar',
   first_name: 'James',
   position: 'G',
+  height: 77,
   weight: 311,
   age: 23,
   experience: 0
@@ -184,6 +203,7 @@ brandon_dunn = Player.find_or_create_by(
   last_name: 'Dunn',
   first_name: 'Brandon',
   position: 'DT',
+  height: 74,
   weight: 300,
   age: 21,
   experience: 0
@@ -193,6 +213,7 @@ armanti_edwards = Player.find_or_create_by(
   last_name: 'Edwards',
   first_name: 'Armanti',
   position: 'WR',
+  height: 71,
   weight: 190,
   age: 26,
   experience: 5
@@ -202,6 +223,7 @@ david_fales = Player.find_or_create_by(
   last_name: 'Fales',
   first_name: 'David',
   position: 'QB',
+  height: 74,
   weight: 212,
   age: 23,
   experience: 0
@@ -211,6 +233,7 @@ ego_ferguson = Player.find_or_create_by(
   last_name: 'Ferguson',
   first_name: 'Ego',
   position: 'DT',
+  height: 72,
   weight: 309,
   age: 22,
   experience: 0
@@ -220,6 +243,7 @@ tony_fiammetta = Player.find_or_create_by(
   last_name: 'Fiammetta',
   first_name: 'Tony',
   position: 'FB',
+  height: 72,
   weight: 250,
   age: 27,
   experience: 5
@@ -229,6 +253,7 @@ michael_ford = Player.find_or_create_by(
   last_name: 'Ford',
   first_name: 'Michael',
   position: 'RB',
+  height: 70,
   weight: 216,
   age: 24,
   experience: 2
@@ -238,6 +263,7 @@ matt_forte = Player.find_or_create_by(
   last_name: 'Forte',
   first_name: 'Matt',
   position: 'RB',
+  height: 74,
   weight: 218,
   age: 28,
   experience: 7
