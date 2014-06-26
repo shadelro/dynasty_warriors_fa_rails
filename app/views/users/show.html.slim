@@ -13,6 +13,7 @@ table
     th Age
     th Experience
     th Top Bidder
+    th Top Bid
   - @user.team && @user.team.bids.map(&:player).each do |player|
     tr
       td= player.number
@@ -23,3 +24,4 @@ table
       td= player.age
       td= player.experience_display
       td= player.top_bidder.name
+      td= number_to_currency(player.top_bid.amount, precision: 2)

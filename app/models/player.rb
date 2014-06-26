@@ -5,6 +5,10 @@ class Player < ActiveRecord::Base
     bids.sort_by(&:amount).reverse
   end
 
+  def top_bid
+    top_bids.first
+  end
+
   def top_bidders
     top_bids.map { |bid| bid.team.user }
   end

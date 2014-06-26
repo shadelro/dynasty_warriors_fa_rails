@@ -12,8 +12,6 @@ class Bid < ActiveRecord::Base
   end
 
   def team_has_salary
-    if self.team.remaining_salary < self.amount
-      errors.add(:amount, "team doesn't have enough salary")
-    end
+    errors.add(:amount, "team doesn't have enough salary") if self.team.remaining_salary < self.amount
   end
 end

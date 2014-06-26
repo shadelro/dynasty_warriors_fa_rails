@@ -12,8 +12,6 @@ class Team < ActiveRecord::Base
   end
 
   def update_salary
-    if self.rank != rank_was
-      self.salary_cap = 1000000 * self.rank
-    end
+    self.salary_cap = 1000000 * self.rank if self.rank != rank_was
   end
 end
