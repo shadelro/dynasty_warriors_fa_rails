@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20140625234506) do
 
   create_table "bids", force: true do |t|
     t.integer  "player_id"
-    t.integer  "user_id"
+    t.integer  "team_id"
     t.decimal  "amount"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 20140625234506) do
     t.integer  "user_id"
     t.string   "name"
     t.integer  "rank"
+    t.integer  "salary_cap"
+    t.integer  "remaining_salary"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

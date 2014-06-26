@@ -6,19 +6,19 @@ class BidsController < ApplicationController
   end
 
   def create
-    Bid.create(user: current_user, player_id: bid_params[:player_id], amount: bid_params[:amount])
+    Bid.create(team: current_user.team, player_id: bid_params[:player_id], amount: bid_params[:amount])
 
     flash[:notice] = 'Bid Made'
     redirect_to players_path
   end
 
   def edit
-    @bid = Bid.find_by(id: params[:id], user_id: current_user.id)
+    @bid = Bid.find_by(id: params[:id], team: current_user.team)
     @player = @bid.player
   end
 
   def update
-    bid = Bid.find_by(id: params[:id], user_id: current_user.id)
+    bid = Bid.find_by(id: params[:id], team: current_user.team)
     bid.amount = bid_params[:amount]
     bid.save
 
@@ -27,7 +27,7 @@ class BidsController < ApplicationController
   end
 
   def destroy
-    Bid.find_by(id: bid_params[:id], user_id: current_user.id).destroy
+    Bid.find_by(id: bid_params[:id], team: current_user.team).destroy
 
     flash[:notice] = 'Bid Cancelled'
     redirect_to players_path

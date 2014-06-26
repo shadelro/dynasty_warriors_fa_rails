@@ -6,7 +6,7 @@ table
     th Amount
   - @player.bids.each do |bid|
     tr
-      td= bid.user.name
+      td= bid.team.user.name
       td= number_to_currency(bid.amount, precision: 0)
 = form_tag bids_path
   = hidden_field_tag :player_id, @player.id

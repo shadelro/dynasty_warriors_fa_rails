@@ -6,7 +6,7 @@ class Player < ActiveRecord::Base
   end
 
   def top_bidders
-    top_bids.map(&:user)
+    top_bids.map { |bid| bid.team.user }
   end
 
   def top_bidder
