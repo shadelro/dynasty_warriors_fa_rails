@@ -276,7 +276,8 @@ jerry_franklin = Player.find_or_create_by(
   height: 73,
   weight: 245,
   age: 26,
-  experience: 2)
+  experience: 2
+)
 isaiah_frey = Player.find_or_create_by(
   number: 31,
   last_name: 'Frey',
@@ -285,7 +286,8 @@ isaiah_frey = Player.find_or_create_by(
   height: 72,
   weight: 190,
   age: 24,
-  experience: 2)
+  experience: 2
+)
 kyle_fuller = Player.find_or_create_by(
   number: 23,
   last_name: 'Fuller',
@@ -294,7 +296,8 @@ kyle_fuller = Player.find_or_create_by(
   height: 72,
   weight: 194,
   age: 22,
-  experience: 0)
+  experience: 0
+)
 roberto_garza = Player.find_or_create_by(
   number: 63,
   last_name: 'Garza',
@@ -303,7 +306,8 @@ roberto_garza = Player.find_or_create_by(
   height: 74,
   weight: 310,
   age: 35,
-  experience: 35)
+  experience: 35
+)
 robbie_gould = Player.find_or_create_by(
   number: 9,
   last_name: 'Gould',
@@ -312,7 +316,8 @@ robbie_gould = Player.find_or_create_by(
   height: 72,
   weight: 185,
   age: 32,
-  experience: 10)
+  experience: 10
+)
 khaseem_greene = Player.find_or_create_by(
   number: 52,
   last_name: 'Greene',
@@ -321,7 +326,8 @@ khaseem_greene = Player.find_or_create_by(
   height: 73,
   weight: 241,
   age: 25,
-  experience: 2)
+  experience: 2
+)
 ryan_groy = Player.find_or_create_by(
   number: 53,
   last_name: 'Groy',
@@ -330,7 +336,8 @@ ryan_groy = Player.find_or_create_by(
   height: 77,
   weight: 320,
   age: 23,
-  experience: 0)
+  experience: 0
+)
 brandon_harson = Player.find_or_create_by(
   number: 48,
   last_name: 'Hartson',
@@ -339,7 +346,8 @@ brandon_harson = Player.find_or_create_by(
   height: 74,
   weight: 238,
   age: 24,
-  experience: 1)
+  experience: 1
+)
 kelvin_hayden = Player.find_or_create_by(
   number: 24,
   last_name: 'Hayden',
@@ -348,7 +356,8 @@ kelvin_hayden = Player.find_or_create_by(
   height: 72,
   weight: 195,
   age: 30,
-  experience: 10)
+  experience: 10
+)
 lamarr_houston = Player.find_or_create_by(
   number: 99,
   last_name: 'Houston',
@@ -357,7 +366,8 @@ lamarr_houston = Player.find_or_create_by(
   height: 75,
   weight: 300,
   age: 27,
-  experience: 5)
+  experience: 5
+)
 demontre_hurst = Player.find_or_create_by(
   number: 30,
   last_name: 'Hurst',
@@ -366,7 +376,8 @@ demontre_hurst = Player.find_or_create_by(
   height: 70,
   weight: 183,
   age: 23,
-  experience: 1)
+  experience: 1
+)
 alshon_jeffery = Player.find_or_create_by(
   number: 17,
   last_name: 'Jeffery',
@@ -375,7 +386,8 @@ alshon_jeffery = Player.find_or_create_by(
   height: 75,
   weight: 216,
   age: 24,
-  experience: 3)
+  experience: 3
+)
 md_jennings = Player.find_or_create_by(
   number: 37,
   last_name: 'Jennings',
@@ -384,7 +396,8 @@ md_jennings = Player.find_or_create_by(
   height: 72,
   weight: 187,
   age: 25,
-  experience: 4)
+  experience: 4
+)
 tim_jennings = Player.find_or_create_by(
   number: 26,
   last_name: 'Jennings',
@@ -393,7 +406,8 @@ tim_jennings = Player.find_or_create_by(
   height: 68,
   weight: 185,
   age: 30,
-  experience: 9)
+  experience: 9
+)
 christian_jones = Player.find_or_create_by(
   number: 96,
   last_name: 'Jones',
@@ -402,7 +416,8 @@ christian_jones = Player.find_or_create_by(
   height: 75,
   weight: 240,
   age: 23,
-  experience: 0)
+  experience: 0
+)
 austen_lane = Player.find_or_create_by(
   number: 73,
   last_name: 'Lane',
@@ -411,7 +426,8 @@ austen_lane = Player.find_or_create_by(
   height: 78,
   weight: 265,
   age: 26,
-  experience: 4)
+  experience: 4
+)
 dede_lattimore = Player.find_or_create_by(
   number: 60,
   last_name: 'Lattimore',
@@ -420,7 +436,8 @@ dede_lattimore = Player.find_or_create_by(
   height: 73,
   weight: 237,
   age: 23,
-  experience: 0)
+  experience: 0
+)
 chares_leno_jr = Player.find_or_create_by(
   number: 72,
   last_name: 'Leno Jr.',
@@ -429,7 +446,8 @@ chares_leno_jr = Player.find_or_create_by(
   height: 76,
   weight: 303,
   age: 22,
-  experience: 0)
+  experience: 0
+)
 joe_long = Player.find_or_create_by(
   number: 79,
   last_name: 'Long',
@@ -438,7 +456,8 @@ joe_long = Player.find_or_create_by(
   height: 72,
   weight: 304,
   age: 24,
-  experience: 1)
+  experience: 1
+)
 kyle_long = Player.find_or_create_by(
   number: 75,
   last_name: 'Long',
@@ -447,7 +466,8 @@ kyle_long = Player.find_or_create_by(
   height: 78,
   weight: 311,
   age: 25,
-  experience: 2)
+  experience: 2
+)
 al_louis_jean = Player.find_or_create_by(
   number: 39,
   last_name: 'Louis-Jean',
@@ -456,7 +476,8 @@ al_louis_jean = Player.find_or_create_by(
   height: 73,
   weight: 187,
   age: 20,
-  experience: 0)
+  experience: 0
+)
 jordan_lynch = Player.find_or_create_by(
   number: 36,
   last_name: 'Lynch',
@@ -465,7 +486,8 @@ jordan_lynch = Player.find_or_create_by(
   height: 72,
   weight: 220,
   age: 24,
-  experience: 0)
+  experience: 0
+)
 brandon_marshall = Player.find_or_create_by(
   number: 15,
   last_name: 'Marshall',
