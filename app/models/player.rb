@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: players
+#
+#  id         :integer          not null, primary key
+#  first_name :string(255)
+#  last_name  :string(255)
+#  position   :string(255)
+#  number     :integer
+#  height     :integer
+#  weight     :integer
+#  age        :integer
+#  experience :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Player < ActiveRecord::Base
   has_many :bids
 

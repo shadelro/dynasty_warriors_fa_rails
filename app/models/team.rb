@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: teams
+#
+#  id         :integer          not null, primary key
+#  user_id    :integer
+#  name       :string(255)
+#  rank       :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Team < ActiveRecord::Base
   belongs_to :league
   belongs_to :user

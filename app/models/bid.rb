@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: bids
+#
+#  id         :integer          not null, primary key
+#  player_id  :integer
+#  user_id    :integer
+#  amount     :decimal(, )
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Bid < ActiveRecord::Base
   belongs_to :player
   belongs_to :team
