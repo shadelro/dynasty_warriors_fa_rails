@@ -1,0 +1,11 @@
+= form_tag league_team_path(id: @team.id), method: :put
+  = label_tag :name, 'Name'
+  = text_field_tag :name, @team.name
+
+  = label_tag :user, 'Owner'
+  = select_tag 'user', options_from_collection_for_select(@team.league.users, 'id', 'name')
+
+  = label_tag :remaining_salary, 'Remaining Salary'
+  = text_field_tag :remaining_salary, @team.remaining_salary
+
+  = submit_tag 'Update'

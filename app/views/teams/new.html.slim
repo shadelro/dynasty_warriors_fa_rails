@@ -1,4 +1,8 @@
-= form_tag teams_path
+= form_tag league_teams_path(@team.league_id)
   = label_tag :name, 'Name'
   = text_field_tag :name
+
+  = label_tag :rank, 'Rank'
+  = number_field_tag :rank
+
   = submit_tag 'Create'

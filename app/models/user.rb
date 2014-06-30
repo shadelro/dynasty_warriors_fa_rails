@@ -6,6 +6,20 @@ class User < ActiveRecord::Base
   devise :omniauthable, omniauth_providers: [:facebook]
 
   has_one :team
+  has_many :leagues, through: :memberships
+  has_many :memberships
+
+  def is_commissioner?(league)
+    is_role?(1)
+  end
+
+  def is_deputy?(league)
+    is_role?(2)
+  end
+
+  def is_member?(league)
+    is_role?(3)
+  end
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
@@ -22,6 +36,12 @@ class User < ActiveRecord::Base
         user.email = data["email"] if user.email.blank?
       end
     end
+  end
+
+  private
+
+  def is_role?(role)
+    memberships.any? { |membership| membership.role == role && membership.league_id == league.id }
   end
 
 end

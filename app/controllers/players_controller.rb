@@ -1,6 +1,4 @@
 class PlayersController < ApplicationController
-  before_filter :authenticate_user!
-
   def index
     @players = Player.all.sort_by(&:last_name)
   end

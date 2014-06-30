@@ -1,0 +1,7 @@
+h1= @league.name
+p Teams
+ul
+  - @league.teams.each do |team|
+    li= link_to team.name, league_team_path(league_id: @league.id, id: team.id)
+
+= link_to 'Add a team', new_league_team_path(@league)

@@ -5,8 +5,6 @@
   h2= "#{@user.team.name} #{@user.team.rank}"
   p= "Salary Cap: #{number_to_currency(@user.team.salary_cap, precision: 2)}"
   p= "Salary Remaining: #{number_to_currency(@user.team.remaining_salary, precision: 2)}"
-- else
-  p= link_to 'Create a team', new_team_path
 table
   tr
     th #

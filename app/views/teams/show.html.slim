@@ -1,5 +1,7 @@
 h1= @team.name
 p= "Rank: #{@team.rank}"
-p= "Owner: #{@team.user.name}"
-p= "Salary Cap: #{number_to_currency(@team.salary_cap, precision: 2)}"
-p= "Salary Remaining: #{number_to_currency(@team.remaining_salary, precision: 2)}"
+p= "Owner: #{@team.user && @team.user.name}"
+p= "Salary Cap: #{number_to_currency(@team.salary_cap, precision: 0)}"
+p= "Salary Remaining: #{number_to_currency(@team.remaining_salary, precision: 0)}"
+- if current_user.is_commissioner?(@team.league)
+  = link_to 'Edit team', edit_league_team_path(id: @team.id)

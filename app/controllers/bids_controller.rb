@@ -1,6 +1,4 @@
 class BidsController < ApplicationController
-  before_filter :authenticate_user!
-
   def new
     @player = Player.find(bid_params[:player_id])
   end
