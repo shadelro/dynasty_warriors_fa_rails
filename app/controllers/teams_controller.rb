@@ -2,11 +2,11 @@ class TeamsController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @team = Team.find_by(team_params[:id], league_id: team_params[:league_id])
+    @team = Team.find_by(id: team_params[:id], league_id: team_params[:league_id])
   end
 
   def index
-    @teams = Team.find_by(league_id: team_params[:league_id])
+    @teams = Team.where(league_id: team_params[:league_id])
   end
 
   def new
@@ -14,7 +14,13 @@ class TeamsController < ApplicationController
   end
 
   def create
-    team = Team.create(league_id: team_params[:league_id], name: team_params[:name], rank: team_params[:rank])
+    binding.pry
+    team = Team.create(
+      league_id: team_params[:league_id],
+      name: team_params[:name],
+      rank: team_params[:rank],
+      user_id: team_params[:user]
+    )
 
     flash[:notice] = 'Team Created'
     redirect_to league_team_path(id: team.id)

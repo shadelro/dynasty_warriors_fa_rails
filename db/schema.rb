@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140630001742) do
+ActiveRecord::Schema.define(version: 20140705030558) do
 
   create_table "bids", force: true do |t|
     t.integer  "player_id"
@@ -21,9 +21,17 @@ ActiveRecord::Schema.define(version: 20140630001742) do
     t.datetime "updated_at"
   end
 
+  create_table "invitations", force: true do |t|
+    t.string   "owner_id"
+    t.string   "user_id"
+    t.string   "league_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "leagues", force: true do |t|
     t.string   "name"
-    t.integer  "user_id"
+    t.string   "commissioner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

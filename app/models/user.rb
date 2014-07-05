@@ -32,6 +32,7 @@ class User < ActiveRecord::Base
   has_one :team
   has_many :leagues, through: :memberships
   has_many :memberships
+  has_many :invitations
 
   def is_commissioner?(league)
     is_role?(1)

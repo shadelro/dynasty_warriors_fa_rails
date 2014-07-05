@@ -3,3 +3,5 @@
 ul
 - @leagues.each do |league|
   li= link_to league.name, league
+
+p= link_to 'Invitations', user_invitations_path(user_id: current_user.id)

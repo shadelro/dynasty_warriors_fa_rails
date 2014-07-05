@@ -1,0 +1,2 @@
+- @invitations.each do |invitation|
+  p= link_to invitation.league.name, user_invitation_path(user_id: current_user.id, id: invitation.id)

@@ -6,11 +6,13 @@ Rails.application.routes.draw do
   resources :bids, only: [:new, :create, :edit, :update, :destroy]
   resources :leagues, only: [:show, :new, :create] do
     resources :teams, only: [:show, :index, :new, :create, :edit, :update]
+    resources :invitations, only: [:index, :new, :create]
   end
 
   resources :memberships, only: [:create, :destroy]
   resources :players, only: [:index, :show]
   resources :users, only: [:show] do
     resources :leagues, only: [:index]
+    resources :invitations, only: [:show, :index]
   end
 end

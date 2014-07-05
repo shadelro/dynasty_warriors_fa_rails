@@ -12,7 +12,7 @@ class LeaguesController < ApplicationController
   end
 
   def create
-    league = League.create(name: league_params[:name])
+    league = League.create(name: league_params[:name], commissioner: current_user)
     membership = Membership.create(league: league, user: current_user, role: 3)
 
     flash[:notice]  = 'Team Created'

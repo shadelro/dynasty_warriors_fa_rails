@@ -5,4 +5,7 @@
   = label_tag :rank, 'Rank'
   = number_field_tag :rank
 
+  = label_tag :user, 'User'
+  = select_tag 'user', options_from_collection_for_select(@team.league.users, 'id', 'name')
+
   = submit_tag 'Create'
