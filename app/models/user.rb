@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, omniauth_providers: [:facebook]
 
-  has_one :team
+  has_many :teams
   has_many :leagues, through: :memberships
   has_many :memberships
   has_many :invitations

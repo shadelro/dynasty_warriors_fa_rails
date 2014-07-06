@@ -14,7 +14,6 @@ class TeamsController < ApplicationController
   end
 
   def create
-    binding.pry
     team = Team.create(
       league_id: team_params[:league_id],
       name: team_params[:name],
@@ -27,11 +26,11 @@ class TeamsController < ApplicationController
   end
 
   def edit
-    @team = Team.find_by(team_params[:id], league_id: team_params[:league_id])
+    @team = Team.find_by(id: team_params[:id], league_id: team_params[:league_id])
   end
 
   def update
-    team = Team.find_by(team_params[:id], league_id: team_params[:league_id])
+    team = Team.find_by(id: team_params[:id], league_id: team_params[:league_id])
     team.name = team_params[:name]
     team.user_id = team_params[:user]
     team.remaining_salary = team_params[:remaining_salary]

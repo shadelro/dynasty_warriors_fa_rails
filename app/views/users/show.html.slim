@@ -1,29 +1,3 @@
-- if @user.team
-  h1
-    = image_tag @user.image
-    = @user.name
-  h2= "#{@user.team.name} #{@user.team.rank}"
-  p= "Salary Cap: #{number_to_currency(@user.team.salary_cap, precision: 2)}"
-  p= "Salary Remaining: #{number_to_currency(@user.team.remaining_salary, precision: 2)}"
-table
-  tr
-    th #
-    th Name
-    th Position
-    th Height
-    th Weight
-    th Age
-    th Experience
-    th Top Bidder
-    th Top Bid
-  - @user.team && @user.team.bids.map(&:player).each do |player|
-    tr
-      td= player.number
-      td= link_to player.full_name, player
-      td= player.position
-      td= player.height_display
-      td= player.weight
-      td= player.age
-      td= player.experience_display
-      td= player.top_bidder.name
-      td= number_to_currency(player.top_bid.amount, precision: 2)
+h1
+  = image_tag @user.image
+  = @user.name
