@@ -23,5 +23,7 @@ module DynastyWarriorsFaRails
     # For Foundation 5
     config.assets.precompile += %w( vendor/modernizr )
 
+    # Custom directories with classes and modules you want to be autoloadable.
+    config.autoload_paths += %W(#{config.root}/lib)
   end
 end
