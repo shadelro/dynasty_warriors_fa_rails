@@ -18,20 +18,24 @@
 class Player < ActiveRecord::Base
   has_many :bids
 
-  def top_bids
-    bids.sort_by(&:amount).reverse
+  def league_bids(league_id)
+    bids.select { |bid| bid.team.league.id = league_id }
   end
 
-  def top_bid
-    top_bids.first
+  def top_bids(league_id)
+    league_bids(league_id).sort_by(&:amount).reverse
   end
 
-  def top_bidders
-    top_bids.map { |bid| bid.team.user }
+  def top_bid(league_id)
+    top_bids(league_id).first
   end
 
-  def top_bidder
-    top_bidders.first || User.new
+  def top_bidders(league_id)
+    top_bids(league_id).map { |bid| bid.team.user }
+  end
+
+  def top_bidder(league_id)
+    top_bidders(league_id).first || User.new
   end
 
   def full_name

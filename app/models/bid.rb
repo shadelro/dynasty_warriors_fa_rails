@@ -4,7 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  player_id  :integer
-#  user_id    :integer
+#  team_id    :integer
 #  amount     :decimal(, )
 #  created_at :datetime
 #  updated_at :datetime

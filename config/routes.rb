@@ -3,9 +3,10 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: {omniauth_callbacks: 'users/omniauth_callbacks'}
 
-  resources :bids, only: [:new, :create, :edit, :update, :destroy]
   resources :leagues, only: [:show, :new, :create] do
-    resources :teams, only: [:show, :index, :new, :create, :edit, :update]
+    resources :teams, only: [:show, :index, :new, :create, :edit, :update] do
+      resources :bids, only: [:new, :create, :edit, :update, :destroy]
+    end
     resources :invitations, only: [:index, :new, :create]
     resources :players, only: [:index, :show]
   end

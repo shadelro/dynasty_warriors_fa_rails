@@ -34,16 +34,20 @@ class User < ActiveRecord::Base
   has_many :memberships
   has_many :invitations
 
+  def team_for_league(league_id)
+    teams.find { |team| team.league_id = league_id }
+  end
+
   def is_commissioner?(league)
-    is_role?(1)
+    is_role?(1, league)
   end
 
   def is_deputy?(league)
-    is_role?(2)
+    is_role?(2, league)
   end
 
   def is_member?(league)
-    is_role?(3)
+    is_role?(3, league)
   end
 
   def self.from_omniauth(auth)
@@ -65,7 +69,7 @@ class User < ActiveRecord::Base
 
   private
 
-  def is_role?(role)
+  def is_role?(role, league)
     memberships.any? { |membership| membership.role == role && membership.league_id == league.id }
   end
 

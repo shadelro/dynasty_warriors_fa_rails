@@ -8,7 +8,7 @@ table
     tr
       td= bid.team.user.name
       td= number_to_currency(bid.amount, precision: 0)
-= form_tag bids_path
+= form_tag league_team_bids_path(params[:league_id], params[:team_id])
   = hidden_field_tag :player_id, @player.id
   = label_tag :amount, 'Amount'
   = text_field_tag :amount

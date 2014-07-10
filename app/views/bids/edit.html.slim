@@ -4,11 +4,11 @@ table
   tr
     th Name
     th Amount
-  - @player.top_bids.each do |bid|
+  - @player.top_bids(1).each do |bid|
     tr
       td= bid.team.user.name
       td= number_to_currency(bid.amount, precision: 0)
-= form_tag bid_path(@bid.id), method: :put
+= form_tag league_team_bid_path(params[:league_id], params[:team_id], @bid.id), method: :put
   = hidden_field_tag :player_id, @player.id
   = label_tag :amount, 'Amount'
   = text_field_tag :amount
