@@ -4,7 +4,7 @@ module PlayersHelper
     top_bid = player.top_bid(league_id)
 
     if top_bidder.present? && top_bid.present?
-      "#{top_bidder.name}: #{number_to_currency(top_bid.amount)}"
+      "#{top_bidder.name}: #{number_to_currency(top_bid.amount, precision: 0)}"
     end
   end
 end

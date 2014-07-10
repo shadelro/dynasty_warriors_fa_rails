@@ -12,6 +12,6 @@ module ApplicationHelper
   end
 
   def current_team_display
-    "#{current_team.name} (#{number_to_currency(current_team.remaining_salary)})"
+    "#{current_team.name} (#{number_to_currency(current_team.remaining_salary, precision: 0)})"
   end
 end
