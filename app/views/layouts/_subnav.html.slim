@@ -1,0 +1,8 @@
+/ navigation styled for Zurb Foundation 5
+nav.top-bar[data-topbar]
+  ul.title-area
+  .top-bar-section
+    ul
+      - if current_team
+        li.name= link_to current_team_display, league_team_path(league_id: current_league.id, id: current_team.id)
+      li.name= link_to 'Free Agency', league_players_path(league_id: current_league.id)

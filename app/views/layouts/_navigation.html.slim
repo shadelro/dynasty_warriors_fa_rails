@@ -1,10 +1,15 @@
 / navigation styled for Zurb Foundation 5
 nav.top-bar[data-topbar]
   ul.title-area
+  .top-bar-section
     - if current_user.present?
-      li.name
-        = link_to 'Me', user_path(current_user)
-        = link_to 'My Leagues', user_leagues_path(current_user)
-  .top-bar-section.right
-    ul
+      ul.left
+        li.name
+          = link_to 'Me', user_path(current_user)
+        li.name.has-dropdown
+          a href='#'= current_league_name
+          ul.dropdown
+            - (current_user.leagues - [current_league]).each do |league|
+              li= link_to league.name, league_path(league)
+    ul.right
       == render 'layouts/navigation_links'

@@ -13,6 +13,7 @@ html
   body
     header
       == render 'layouts/navigation'
+      == render 'layouts/subnav' if current_league
     main[role="main"]
       == render 'layouts/messages'
       == yield
