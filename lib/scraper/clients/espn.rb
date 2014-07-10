@@ -32,7 +32,7 @@ module Scraper
               experience: experience
             )
           }
-        }.select { |player| %W(QB RB WR TE LB CB DB S).include? player.position }
+        }.select { |player| %W(QB RB WR TE DT DE LB CB DB S PK).include? player.position }
       end
 
       private
