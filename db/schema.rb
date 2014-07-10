@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20140705030558) do
 
   create_table "leagues", force: true do |t|
     t.string   "name"
-    t.integer  "user_id"
+    t.integer  "commissioner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
