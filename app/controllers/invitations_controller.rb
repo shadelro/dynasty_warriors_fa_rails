@@ -1,6 +1,6 @@
 class InvitationsController < ApplicationController
   def show
-    @invitation = Invitation.find_by(id: params[:id], user: current_user)
+    @invitation = Invitation.find_by(id: params[:id], user_id: current_user.id)
   end
 
   def index
