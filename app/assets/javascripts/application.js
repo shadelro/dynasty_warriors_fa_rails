@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require jquery.tablesorter
+//= require players
 //= require_tree .
 $(function() {
   $(document).foundation();

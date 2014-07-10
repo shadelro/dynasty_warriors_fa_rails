@@ -1,0 +1,3 @@
+$(function () {
+  $("#player-table").tablesorter();
+});
