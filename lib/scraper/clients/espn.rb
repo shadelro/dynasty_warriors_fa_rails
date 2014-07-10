@@ -19,7 +19,7 @@ module Scraper
           Player.find_or_initialize_by(first_name: first_name, last_name: last_name).tap { |player|
             player.assign_attributes(
               number: text_to_int(attributes[0]),
-              position: text_to_string(attributes[2]),
+              position: text_to_position(attributes[2]),
               age: text_to_int(attributes[3]),
               height: text_to_height(attributes[4]),
               weight: text_to_int(attributes[5]),
