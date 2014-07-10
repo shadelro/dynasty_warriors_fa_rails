@@ -9,7 +9,7 @@ table
       td= bid.team.user.name
       td= number_to_currency(bid.amount, precision: 0)
 - if @my_bid
-  p= link_to 'Change Bid', edit_league_team_bid_path(league_id: params[:league_id], team_id: @team.id, id: @my_bid.id)
-  p= button_to 'Cancel Bid', league_team_bid_path(league_id: params[:league_id], team_id: @team.id, id: @my_bid.id), method: :delete
+  p= link_to 'Change Bid', edit_league_team_bid_path(league_id: params[:league_id], team_id: @my_team.id, id: @my_bid.id)
+  p= button_to 'Cancel Bid', league_team_bid_path(league_id: params[:league_id], team_id: @my_team.id, id: @my_bid.id), method: :delete
 - else
-  p= link_to 'Make Bid', new_league_team_bid_path(league_id: params[:league_id], team_id: @team.id, player_id: @player.id)
+  p= link_to 'Make Bid', new_league_team_bid_path(league_id: params[:league_id], team_id: @my_team.id, player_id: @player.id)
