@@ -10,6 +10,7 @@ gem 'foundation-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'omniauth-facebook'
+gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'slim-rails'
@@ -28,9 +29,4 @@ end
 
 group :development, :test do
   gem 'jazz_hands'
-  gem 'sqlite3'
-end
-
-group :production do
-  gem 'pg'
 end

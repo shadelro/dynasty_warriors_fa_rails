@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140705030558) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "bids", force: true do |t|
     t.integer  "player_id"
     t.integer  "team_id"
@@ -22,9 +25,9 @@ ActiveRecord::Schema.define(version: 20140705030558) do
   end
 
   create_table "invitations", force: true do |t|
-    t.string   "owner_id"
-    t.string   "user_id"
-    t.string   "league_id"
+    t.integer  "owner_id"
+    t.integer  "user_id"
+    t.integer  "league_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -87,7 +90,7 @@ ActiveRecord::Schema.define(version: 20140705030558) do
     t.string   "image"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
