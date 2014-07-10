@@ -19,4 +19,4 @@ table#player-table.tablesorter
         td= player.weight
         td= player.age
         td= player.experience_display
-        td= player.top_bidder(params[:league_id]).name
+        td= top_bidder(player, params[:league_id])
