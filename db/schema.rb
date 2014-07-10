@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20140705030558) do
 
   create_table "leagues", force: true do |t|
     t.string   "name"
-    t.string   "commissioner_id"
+    t.integer  "commissioner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -59,13 +59,13 @@ ActiveRecord::Schema.define(version: 20140705030558) do
 
   create_table "teams", force: true do |t|
     t.integer  "user_id"
+    t.integer  "league_id"
     t.string   "name"
     t.integer  "rank"
     t.integer  "salary_cap"
     t.integer  "remaining_salary"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "league_id"
   end
 
   create_table "users", force: true do |t|
@@ -82,7 +82,6 @@ ActiveRecord::Schema.define(version: 20140705030558) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-    t.integer  "team_id"
     t.string   "provider"
     t.string   "uid"
     t.string   "image"

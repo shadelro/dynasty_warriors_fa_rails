@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :memberships, only: [:create, :destroy]
-  resources :users, only: [:show] do
+  resources :users, only: [:show, :index] do
     resources :leagues, only: [:index]
     resources :invitations, only: [:show, :index]
   end
