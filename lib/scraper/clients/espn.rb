@@ -32,7 +32,7 @@ module Scraper
               experience: experience
             )
           }
-        }.select { |player| %W(QB RB WR TE DL LB DB K).include? player.position }
+        }.select { |player| %W(QB RB WR TE DL LB DB PK).include? player.position }
       end
 
       private
@@ -51,7 +51,7 @@ module Scraper
           'DL'
         elsif position == 'CB' || position == 'S'
           'DB'
-        elsif position == 'K'
+        elsif position == 'PK'
           'K'
         else
           position
