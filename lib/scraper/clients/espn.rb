@@ -32,7 +32,7 @@ module Scraper
               experience: experience
             )
           }
-        }.select { |player| %W(QB RB WR TE DT DE LB CB DB S PK).include? player.position }
+        }.select { |player| %W(QB RB WR TE DL LB DB K).include? player.position }
       end
 
       private
@@ -43,6 +43,19 @@ module Scraper
 
       def text_to_int(attribute)
         attribute.text == '--' ? nil : attribute.text.to_i
+      end
+
+      def text_to_position(attribute)
+        position = text_to_string(attribute)
+        if position == 'DT' || position == 'DE'
+          'DL'
+        elsif position == 'CB' || position == 'S'
+          'DB'
+        elsif position == 'K'
+          'K'
+        else
+          position
+        end
       end
 
       def text_to_height(attribute)
