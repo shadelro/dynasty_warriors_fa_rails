@@ -14,22 +14,16 @@ module Scraper
         rows = page.css('#my-players-table tr.oddrow, #my-players-table tr.evenrow')
         rows.map { |row|
           attributes = row.css('td')
-          number = text_to_int(attributes[0])
           first_name, last_name = text_to_string(attributes[1]).split(' ')
-          position = text_to_string(attributes[2])
-          age = text_to_int(attributes[3])
-          height = text_to_height(attributes[4])
-          weight = text_to_int(attributes[5])
-          experience = text_to_exp(attributes[6])
 
           Player.find_or_initialize_by(first_name: first_name, last_name: last_name).tap { |player|
             player.assign_attributes(
-              number: number,
-              position: position,
-              age: age,
-              height: height,
-              weight: weight,
-              experience: experience
+              number: text_to_int(attributes[0]),
+              position: text_to_string(attributes[2]),
+              age: text_to_int(attributes[3]),
+              height: text_to_height(attributes[4]),
+              weight: text_to_int(attributes[5]),
+              experience: text_to_exp(attributes[6])
             )
           }
         }.select { |player| %W(QB RB WR TE DL LB DB K).include? player.position }
