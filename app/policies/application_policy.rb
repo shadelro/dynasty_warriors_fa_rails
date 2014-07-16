@@ -1,3 +1,5 @@
+# This class is not used anywhere. It's left in the code as an example of Pundit.
+# TODO (Divi): I'll remove it once I am used to creating policy objects.
 class ApplicationPolicy
   attr_reader :user, :record
 
@@ -38,4 +40,3 @@ class ApplicationPolicy
     Pundit.policy_scope!(user, record.class)
   end
 end
-
