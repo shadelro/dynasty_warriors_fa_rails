@@ -10,7 +10,7 @@ table#player-table.tablesorter
       th Experience
       th Top Bidder
   tbody
-    - @players.each do |player|
+    - current_league.players.each do |player|
       tr
         td= player.number
         td= link_to player.full_name, league_player_path(league_id: params[:league_id], id: player.id)

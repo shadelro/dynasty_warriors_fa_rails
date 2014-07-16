@@ -1,0 +1,5 @@
+ul
+  - @players.each do |player|
+    li
+      p= player.full_name
+      = button_to 'Add', registrations_path(league_id: current_league.id, player_id: player.id)

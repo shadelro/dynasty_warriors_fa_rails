@@ -10,4 +10,5 @@ ul
   - if @league.active
     p= button_to 'Finish Free Agency', finish_league_path(@league)
   - else
+    p= link_to 'Manage Players', add_remove_league_players_path(@league)
     p= button_to 'Start Free Agency', start_league_path(@league)

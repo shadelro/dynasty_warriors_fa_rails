@@ -8,12 +8,15 @@ Rails.application.routes.draw do
       resources :bids, only: [:new, :create, :edit, :update, :destroy]
     end
     resources :invitations, only: [:index, :new, :create]
-    resources :players, only: [:index, :show]
+    resources :players, only: [:index, :show] do
+      get 'add_remove', on: :collection
+    end
     member do
       post 'start'
       post 'finish'
     end
   end
+  resources :registrations, only: [:create, :destroy]
 
   resources :memberships, only: [:create, :destroy]
   resources :users, only: [:show] do

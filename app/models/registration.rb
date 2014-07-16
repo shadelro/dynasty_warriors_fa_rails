@@ -1,4 +1,4 @@
-class Registrations < ActiveRecord::Base
+class Registration < ActiveRecord::Base
   belongs_to :player
   belongs_to :league
 end

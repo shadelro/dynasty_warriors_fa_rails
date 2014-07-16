@@ -11,6 +11,7 @@
 
 class League < ActiveRecord::Base
   has_many :memberships
+  has_many :players, through: :registrations
   has_many :registrations
   has_many :users, through: :memberships
   has_many :teams
