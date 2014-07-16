@@ -1,3 +1,4 @@
+= render 'player_filter'
 table#player-table.tablesorter
   thead
     tr
@@ -14,7 +15,7 @@ table#player-table.tablesorter
       tr
         td= player.number
         td= link_to player.full_name, league_player_path(league_id: params[:league_id], id: player.id)
-        td= player.position
+        td.position= player.position
         td= player.height_display
         td= player.weight
         td= player.age

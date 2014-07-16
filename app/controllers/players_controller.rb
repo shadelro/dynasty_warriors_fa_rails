@@ -1,6 +1,7 @@
 class PlayersController < ApplicationController
   def index
     @players = Player.all.sort_by(&:last_name)
+    @positions = @players.map { |player| player.position }.uniq.sort
   end
 
   def show

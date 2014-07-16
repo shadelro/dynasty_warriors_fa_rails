@@ -7,3 +7,25 @@ $(function () {
       }
     });
 });
+
+$(document).on('change', '#positions_filter', function (e) {
+  var position = e.currentTarget.value;
+
+  if(position === "") {
+    $.each($('#player-table tbody tr'), function () {
+      $(this).css('display', '');
+    });
+  } else {
+    $('#player-table tbody tr').each(function() {
+      $positionColumn = $(this).find('.position');
+
+      if($positionColumn.text() !== position) {
+        $(this).css('display', 'none');
+      }
+      else {
+        $(this).css('display', '');
+      }
+    });
+  }
+
+});
