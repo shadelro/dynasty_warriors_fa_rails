@@ -1,6 +1,6 @@
 class PlayersController < ApplicationController
   def index
-    @players = current_league.players
+    @players = current_league.players.sort_by(&:last_name)
   end
 
   def show
