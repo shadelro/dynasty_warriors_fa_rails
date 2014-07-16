@@ -6,6 +6,6 @@ ul
 
 p= link_to 'Free Agency', league_players_path(league_id: @league.id)
 
-- if current_user == @league.commissioner
+- if policy(Team.new league: @league).create?
   p= link_to 'Add a team', new_league_team_path(@league)
   p= link_to 'Invite a user', new_league_invitation_path(@league)
