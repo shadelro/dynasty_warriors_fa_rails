@@ -11,6 +11,11 @@ class PlayersController < ApplicationController
 
   private
 
+  def bid
+    Bid.find_by(player_id: player_params[:id], team: @my_team) ||
+      Bid.new(player_id: player_params[:id])
+  end
+
   def player_params
     params.permit(:id, :league_id)
   end
