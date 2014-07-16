@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     end
     resources :invitations, only: [:index, :new, :create]
     resources :players, only: [:index, :show]
+    member do
+      post 'start'
+      post 'finish'
+    end
   end
 
   resources :memberships, only: [:create, :destroy]
