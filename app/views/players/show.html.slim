@@ -12,5 +12,5 @@ table
   - if @my_bid
     p= link_to 'Change Bid', edit_league_team_bid_path(league_id: params[:league_id], team_id: @my_team.id, id: @my_bid.id)
     p= button_to 'Cancel Bid', league_team_bid_path(league_id: params[:league_id], team_id: @my_team.id, id: @my_bid.id), method: :delete
-  - else
+  - elsif current_league.active?
     p= link_to 'Make Bid', new_league_team_bid_path(league_id: params[:league_id], team_id: @my_team.id, player_id: @player.id)

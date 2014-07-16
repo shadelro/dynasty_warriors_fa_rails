@@ -4,9 +4,13 @@ class BidsController < ApplicationController
   end
 
   def create
-    Bid.create(team_id: bid_params[:team_id], player_id: bid_params[:player_id], amount: bid_params[:amount])
+    if current_league.active?
+      Bid.create(team_id: bid_params[:team_id], player_id: bid_params[:player_id], amount: bid_params[:amount])
+      flash[:notice] = 'Bid Made'
+    else
+      flash[:error] = 'Nice Try'
+    end
 
-    flash[:notice] = 'Bid Made'
     redirect_to league_players_path(bid_params[:league_id])
   end
 
