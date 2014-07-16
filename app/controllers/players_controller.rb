@@ -1,5 +1,6 @@
 class PlayersController < ApplicationController
   def index
+    @players = current_league.players
   end
 
   def show
