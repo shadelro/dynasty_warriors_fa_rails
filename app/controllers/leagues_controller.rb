@@ -13,7 +13,7 @@ class LeaguesController < ApplicationController
 
   def create
     league = League.create(name: league_params[:name], commissioner: current_user, active: false)
-    membership = Membership.create(league: league, user: current_user, role: 3)
+    membership = Membership.create(league: league, user: current_user, role: 1)
 
     flash[:notice] = 'League Created'
     redirect_to league_path(league)

@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'nokogiri'
 gem 'omniauth-facebook'
 gem 'pg'
+gem 'pundit', '~> 0.2'
 gem 'sass-rails', '~> 4.0.3'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'slim-rails'
