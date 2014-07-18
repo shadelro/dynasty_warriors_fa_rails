@@ -4,6 +4,6 @@ ul
   - @league.teams.each do |team|
     li= link_to team.name, league_team_path(league_id: @league.id, id: team.id)
 
-- if policy(Team.new league: @league).create?
+- if policy(Team.new league: @league).edit?
   p= link_to 'Add a team', new_league_team_path(@league)
   p= link_to 'Invite a user', new_league_invitation_path(@league)
