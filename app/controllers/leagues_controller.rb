@@ -1,6 +1,8 @@
 class LeaguesController < ApplicationController
+  after_action :verify_authorized, except: [:index, :show]
+
   def show
-    @league = League.find(league_params[:id])
+    @league = League.find(params[:id])
   end
 
   def index
@@ -8,11 +10,16 @@ class LeaguesController < ApplicationController
   end
 
   def new
+    league = League.new
 
+    authorize(league)
   end
 
   def create
-    league = League.create(name: league_params[:name], commissioner: current_user, active: false)
+    league = League.new(name: params[:name], commissioner: current_user, active: false)
+    authorize(league)
+    league.save
+
     membership = Membership.create(league: league, user: current_user, role: 1)
 
     flash[:notice] = 'League Created'
@@ -20,22 +27,18 @@ class LeaguesController < ApplicationController
   end
 
   def start
-    league = League.find(league_params[:id])
+    league = League.find(params[:id])
+    authorize(league)
     league.start
+
     flash[:notice] = 'Free Agency Started'
-    redirect_to league
+    redirect_to league_players_path(league)
   end
 
   def finish
-    league = League.find(league_params[:id])
+    league = League.find(params[:id])
     league.finish
     flash[:notice] = 'Free Agency Ended'
-    redirect_to league
-  end
-
-  private
-
-  def league_params
-    params.permit(:name, :id)
+    redirect_to league_players_path(league)
   end
 end

@@ -2,51 +2,45 @@ class BidsController < ApplicationController
   after_action :verify_authorized
 
   def new
-    bid = Bid.new(team_id: bid_params[:team_id], player_id: bid_params[:player_id])
+    bid = Bid.new(team_id: params[:team_id], player_id: params[:player_id])
     authorize bid
 
-    @player = Player.find(bid_params[:player_id])
+    @player = Player.find(params[:player_id])
   end
 
   def create
-    bid = Bid.new(team_id: bid_params[:team_id], player_id: bid_params[:player_id], amount: bid_params[:amount])
+    bid = Bid.new(team_id: params[:team_id], player_id: params[:player_id], amount: params[:amount])
     authorize bid
 
     bid.save
     flash[:notice] = 'Bid Made'
-    redirect_to league_players_path(bid_params[:league_id])
+    redirect_to league_players_path(params[:league_id])
   end
 
   def edit
-    @bid = Bid.find_by(id: params[:id], team: bid_params[:team_id])
+    @bid = Bid.find_by(id: params[:id], team: params[:team_id])
     authorize @bid
 
     @player = @bid.player
   end
 
   def update
-    bid = Bid.find_by(id: params[:id], team: bid_params[:team_id])
+    bid = Bid.find_by(id: params[:id], team: params[:team_id])
     authorize bid
 
-    bid.amount = bid_params[:amount]
+    bid.amount = params[:amount]
     bid.save
 
     flash[:notice] = 'Bid Changed'
-    redirect_to league_players_path(bid_params[:league_id])
+    redirect_to league_players_path(params[:league_id])
   end
 
   def destroy
-    bid = Bid.find_by(id: bid_params[:id], team: bid_params[:team_id])
+    bid = Bid.find_by(id: params[:id], team: params[:team_id])
     authorize bid
 
     bid.destroy
     flash[:notice] = 'Bid Cancelled'
-    redirect_to league_players_path(bid_params[:league_id])
-  end
-
-  private
-
-  def bid_params
-    params.permit(:league_id, :team_id, :id, :player_id, :amount)
+    redirect_to league_players_path(params[:league_id])
   end
 end

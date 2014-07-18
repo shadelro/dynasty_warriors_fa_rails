@@ -1,3 +1,8 @@
+- if policy(current_league).update?
+  - if current_league.active
+    p= button_to 'End Free Agency', finish_league_path(current_league)
+  - else
+    p= button_to 'Start Free Agency', start_league_path(current_league)
 = render 'player_filter'
 table#player-table.tablesorter
   thead
