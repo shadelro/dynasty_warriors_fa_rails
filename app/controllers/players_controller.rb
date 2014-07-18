@@ -5,9 +5,9 @@ class PlayersController < ApplicationController
   end
 
   def show
-    @player = Player.find_by(id: player_params[:id])
-    @my_team = current_user.team_for_league(player_params[:league_id])
-    @my_bid = Bid.find_by(player_id: player_params[:id], team: @my_team)
+    @player = Player.find_by(id: params[:id])
+    @my_team = current_user.team_for_league(params[:league_id])
+    @my_bid = Bid.find_by(player_id: params[:id], team: @my_team)
   end
 
   def add_remove
@@ -17,11 +17,7 @@ class PlayersController < ApplicationController
   private
 
   def bid
-    Bid.find_by(player_id: player_params[:id], team: @my_team) ||
-      Bid.new(player_id: player_params[:id])
-  end
-
-  def player_params
-    params.permit(:id, :league_id)
+    Bid.find_by(player_id: params[:id], team: @my_team) ||
+      Bid.new(player_id: params[:id])
   end
 end
