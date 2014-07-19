@@ -7,4 +7,8 @@ module PlayersHelper
       "#{top_bidder.name}: #{number_to_currency(top_bid.amount, precision: 0)}"
     end
   end
+
+  def positions(players)
+    players.map(&:position).uniq.sort
+  end
 end
