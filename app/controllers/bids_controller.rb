@@ -12,8 +12,11 @@ class BidsController < ApplicationController
     bid = Bid.new(team_id: params[:team_id], player_id: params[:player_id], amount: params[:amount])
     authorize bid
 
-    bid.save
-    flash[:notice] = 'Bid Made'
+    if bid.save
+      flash[:notice] = 'Bid Made'
+    else
+      flash[:error] = 'Bid could not be made'
+    end
     redirect_to league_players_path(params[:league_id])
   end
 
@@ -29,9 +32,12 @@ class BidsController < ApplicationController
     authorize bid
 
     bid.amount = params[:amount]
-    bid.save
 
-    flash[:notice] = 'Bid Changed'
+    if bid.save
+      flash[:notice] = 'Bid Changed'
+    else
+      flash[:notice] = 'Bid could not be updated'
+    end
     redirect_to league_players_path(params[:league_id])
   end
 
@@ -39,8 +45,11 @@ class BidsController < ApplicationController
     bid = Bid.find_by(id: params[:id], team: params[:team_id])
     authorize bid
 
-    bid.destroy
-    flash[:notice] = 'Bid Cancelled'
+    if bid.destroy
+      flash[:notice] = 'Bid Cancelled'
+    else
+      flash[:error] = 'Bid could not be cancelled'
+    end
     redirect_to league_players_path(params[:league_id])
   end
 end

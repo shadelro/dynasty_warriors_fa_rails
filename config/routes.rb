@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :memberships, only: [:create, :destroy]
+  resources :memberships, only: [:create]
   resources :users, only: [:show] do
     resources :leagues, only: [:index]
     resources :invitations, only: [:show, :index]

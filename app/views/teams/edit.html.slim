@@ -5,7 +5,11 @@
   = label_tag :user, 'Owner'
   = select_tag 'user', options_from_collection_for_select(@team.league.users, 'id', 'name')
 
+  = label_tag :rank, 'Rank'
+  = number_field_tag :rank
+
   = label_tag :remaining_salary, 'Remaining Salary'
   = text_field_tag :remaining_salary, @team.remaining_salary
 
   = submit_tag 'Update'
+  = link_to 'Cancel', league_team_path(league_id: current_league.id, id: @team.id)

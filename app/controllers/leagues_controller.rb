@@ -18,12 +18,20 @@ class LeaguesController < ApplicationController
   def create
     league = League.new(name: params[:name], commissioner: current_user, active: false)
     authorize(league)
-    league.save
 
-    membership = Membership.create(league: league, user: current_user, role: 1)
-
-    flash[:notice] = 'League Created'
-    redirect_to league_path(league)
+    if league.save
+      if membership = Membership.create(league: league, user: current_user, role: 1)
+        flash[:notice] = 'League Created'
+        redirect_to league_path(league)
+      else
+        league.destroy
+        flash[:error] = 'League could not be created'
+        redirect_to user_leagues_path(user_id: current_user.id)
+      end
+    else
+      flash[:error] = 'League could not be created'
+      redirect_to user_leagues_path(user_id: current_user.id)
+    end
   end
 
   def start

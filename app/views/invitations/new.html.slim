@@ -1,5 +1,5 @@
 = form_tag league_invitations_path(params[:league_id])
-  = label_tag :user, 'User'
-  = select_tag 'user', options_from_collection_for_select(@users, 'id', 'name')
+  = label_tag :email, 'User Email'
+  = text_field_tag 'email'
 
   = submit_tag 'Invite'

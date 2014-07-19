@@ -9,11 +9,4 @@ class PlayersController < ApplicationController
     @my_team = current_user.team_for_league(params[:league_id])
     @my_bid = Bid.find_by(player_id: params[:id], team: @my_team)
   end
-
-  private
-
-  def bid
-    Bid.find_by(player_id: params[:id], team: @my_team) ||
-      Bid.new(player_id: params[:id])
-  end
 end
