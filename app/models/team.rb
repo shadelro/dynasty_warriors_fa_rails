@@ -16,10 +16,9 @@
 class Team < ActiveRecord::Base
   belongs_to :league
   belongs_to :user
-  has_many :bids
+  has_many :bids, dependent: :destroy
 
   before_create :init
-  before_save :update_salary
 
   def init
     self.salary_cap ||= 50 * self.rank

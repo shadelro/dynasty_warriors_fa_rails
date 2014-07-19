@@ -16,7 +16,7 @@
 #
 
 class Player < ActiveRecord::Base
-  has_many :bids
+  has_many :bids, dependent: :destroy
 
   def league_bids(league_id)
     bids.select { |bid| bid.team.league.id = league_id }

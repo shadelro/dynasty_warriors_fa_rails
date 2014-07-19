@@ -3,9 +3,9 @@
 # Table name: invitations
 #
 #  id         :integer          not null, primary key
-#  owner_id   :string(255)
-#  user_id    :string(255)
-#  league_id  :string(255)
+#  owner_id   :integer
+#  user_id    :integer
+#  league_id  :integer
 #  created_at :datetime
 #  updated_at :datetime
 #

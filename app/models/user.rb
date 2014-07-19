@@ -16,7 +16,6 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  name                   :string(255)
-#  team_id                :integer
 #  provider               :string(255)
 #  uid                    :string(255)
 #  image                  :string(255)
@@ -29,10 +28,20 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, omniauth_providers: [:facebook]
 
-  has_many :teams
+  has_many :teams, dependent: :destroy
   has_many :leagues, through: :memberships
-  has_many :memberships
-  has_many :invitations
+  has_many :memberships, dependent: :destroy
+  has_many :invitations, dependent: :destroy
+
+  before_destroy :destroy_leagues, :destroy_invitations
+
+  def destroy_leagues
+    League.destroy_all(commissioner: self)
+  end
+
+  def destroy_invitations
+    Invitation.destroy_all(owner: self)
+  end
 
   def team_for_league(league_id)
     teams.find { |team| team.league_id = league_id }
