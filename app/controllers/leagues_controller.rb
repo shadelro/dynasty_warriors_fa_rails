@@ -20,7 +20,7 @@ class LeaguesController < ApplicationController
     authorize(league)
 
     if league.save
-      if membership = Membership.create(league: league, user: current_user, role: 1)
+      if Membership.create(league: league, user: current_user, role: 1)
         flash[:notice] = 'League Created'
         redirect_to league_path(league)
       else
