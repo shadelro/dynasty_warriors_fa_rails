@@ -7,11 +7,7 @@ class LeaguePolicy
   end
 
   def create?
-    user.present?
-  end
-
-  def new?
-    create?
+    true
   end
 
   def update?

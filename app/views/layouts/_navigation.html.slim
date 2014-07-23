@@ -4,7 +4,6 @@ nav.top-bar[data-topbar]
   .top-bar-section
     - if current_user.present?
       ul.left
-        li.name= link_to 'Me', user_path(current_user)
         li.name= link_to 'All Leagues', user_leagues_path(current_user.id)
         li.name.has-dropdown
           = link_to current_league_name, current_league_path

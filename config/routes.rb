@@ -15,9 +15,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :memberships, only: [:create]
-  resources :users, only: [:show] do
-    resources :leagues, only: [:index]
+  resources :memberships, only: :create
+  resources :users, only: :none do
+    resources :leagues, only: :index
     resources :invitations, only: [:show, :index]
   end
 end

@@ -28,7 +28,9 @@ group :development do
 end
 
 group :development, :test do
+  gem 'factory_girl_rails'
   gem 'jazz_hands', '~> 0.5.2'
+  gem 'rspec-rails', '~> 3.0.2'
 end
 
 group :doc do

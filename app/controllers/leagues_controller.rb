@@ -1,5 +1,5 @@
 class LeaguesController < ApplicationController
-  after_action :verify_authorized, except: [:index, :show]
+  after_action :verify_authorized, except: [:index, :show, :new]
 
   def show
     @league = League.find(params[:id])
@@ -10,9 +10,6 @@ class LeaguesController < ApplicationController
   end
 
   def new
-    league = League.new
-
-    authorize(league)
   end
 
   def create
@@ -45,7 +42,9 @@ class LeaguesController < ApplicationController
 
   def finish
     league = League.find(params[:id])
+    authorize(league)
     league.finish
+
     flash[:notice] = 'Free Agency Ended'
     redirect_to league_players_path(league)
   end
