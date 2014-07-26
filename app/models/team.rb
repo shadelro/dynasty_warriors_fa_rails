@@ -21,7 +21,6 @@ class Team < ActiveRecord::Base
   before_create :init
 
   def init
-    self.salary_cap ||= 50 * self.rank
-    self.remaining_salary ||= self.salary_cap
+    self.remaining_salary ||= 50 * self.rank
   end
 end
