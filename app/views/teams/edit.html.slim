@@ -6,7 +6,7 @@
   = select_tag 'user', options_from_collection_for_select(@team.league.users, 'id', 'name')
 
   = label_tag :rank, 'Rank'
-  = number_field_tag :rank
+  = number_field_tag :rank, @team.rank
 
   = label_tag :remaining_salary, 'Remaining Salary'
   = text_field_tag :remaining_salary, @team.remaining_salary
