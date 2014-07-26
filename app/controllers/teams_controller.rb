@@ -38,6 +38,7 @@ class TeamsController < ApplicationController
     authorize team
 
     team.name = params[:name]
+    team.rank = params[:rank]
     team.user_id = params[:user]
     team.remaining_salary = params[:remaining_salary]
 
