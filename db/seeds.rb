@@ -56,9 +56,9 @@ end
 
 Player.find_or_create_by(
   first_name: 'Jace',
-  last_name: 'Amaro ',
+  last_name: 'Amaro',
   position: 'TE',
-  height: 80,
+  height: 78,
   weight: 260,
   age: 22,
   experience: 0
@@ -78,7 +78,7 @@ Player.find_or_create_by(
   last_name: 'Smith',
   position: 'QB',
   number: 7,
-  height: 75,
+  height: 73,
   weight: 220,
   age: 23,
   experience: 1
