@@ -1,13 +1,8 @@
-h1= "#{@player.full_name}: #{@player.position}"
-h2 Bids
-table
-  tr
-    th Name
-    th Amount
-  - @player.top_bids(params[:league_id]).each do |bid|
-    tr
-      td= bid.team.user.name
-      td= number_to_currency(bid.amount, precision: 0)
-
-- if @my_bid.nil? && @my_team.present? && current_league.active?
-  p= link_to 'Make Bid', new_league_team_bid_path(league_id: params[:league_id], team_id: @my_team.id, player_id: @player.id)
+h1= "##{@player.number} #{@player.full_name}"
+p= "Position: #{@player.position}"
+p= "Height: #{@player.height_display}"
+p= "Weight: #{@player.weight}lbs"
+p= "Age: #{@player.age}"
+p= "Experience: #{@player.experience_display}"
+p= link_to 'Edit Player', edit_player_path(@player)
+p= button_to 'Delete Player', player_path, method: 'delete'

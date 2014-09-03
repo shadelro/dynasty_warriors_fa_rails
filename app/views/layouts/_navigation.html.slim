@@ -10,5 +10,8 @@ nav.top-bar[data-topbar]
           ul.dropdown
             - (current_user.leagues - [current_league]).each do |league|
               li= link_to league.name, league_path(league)
+        - if current_user.is_admin?
+          li.name
+            = link_to 'Manage Players', players_path
     ul.right
       == render 'layouts/navigation_links'

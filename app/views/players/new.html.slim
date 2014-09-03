@@ -1,0 +1,27 @@
+= form_tag players_path
+  = label_tag :number, 'Number'
+  = number_field_tag :number
+
+  = label_tag :first_name, 'First Name'
+  = text_field_tag :first_name
+
+  = label_tag :first_name, 'Last Name'
+  = text_field_tag :last_name
+
+  = label_tag :position, 'Position'
+  = select_tag :position, options_for_select(player_positions)
+
+  = label_tag :height, 'Height (inches)'
+  = number_field_tag :height
+
+  = label_tag :weight, 'Weight (lbs)'
+  = number_field_tag :weight
+
+  = label_tag :age, 'Age'
+  = number_field_tag :age
+
+  = label_tag :experience, 'Experience'
+  = number_field_tag :experience
+
+  = submit_tag 'Create'
+  = link_to 'Cancel', players_path

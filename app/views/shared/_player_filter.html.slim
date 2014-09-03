@@ -1,0 +1,4 @@
+p Filter By:
+label
+  = label_tag :positions_filter, 'Position'
+  = select_tag :positions_filter, options_for_select(positions(players)), {include_blank: true}

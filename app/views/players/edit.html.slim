@@ -1,0 +1,23 @@
+= form_tag player_path(id: @player.id), method: :put
+  p= @player.full_name
+
+  = label_tag :number, 'Number'
+  = number_field_tag :number, @player.number
+
+  = label_tag :position, 'Position'
+  = select_tag :position, options_for_select(player_positions, @player.position)
+
+  = label_tag :height, 'Height (inches)'
+  = number_field_tag :height, @player.height
+
+  = label_tag :weight, 'Weight (lbs)'
+  = number_field_tag :weight, @player.weight
+
+  = label_tag :age, 'Age'
+  = number_field_tag :age, @player.age
+
+  = label_tag :experience, 'Experience'
+  = number_field_tag :experience, @player.experience
+
+  = submit_tag 'Update'
+  = link_to 'Cancel', @player

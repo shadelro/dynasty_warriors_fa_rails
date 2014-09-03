@@ -48,15 +48,11 @@ class User < ActiveRecord::Base
   end
 
   def is_commissioner?(league)
-    is_role?(1, league)
+    memberships.any? { |membership| membership.role == 1 && membership.league_id == league.id }
   end
 
-  def is_deputy?(league)
-    is_role?(2, league)
-  end
-
-  def is_member?(league)
-    is_role?(3, league)
+  def is_admin?
+    admin
   end
 
   def self.from_omniauth(auth)
@@ -74,12 +70,6 @@ class User < ActiveRecord::Base
         user.email = data["email"] if user.email.blank?
       end
     end
-  end
-
-  private
-
-  def is_role?(role, league)
-    memberships.any? { |membership| membership.role == role && membership.league_id == league.id }
   end
 
 end

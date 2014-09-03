@@ -1,5 +1,8 @@
-p= link_to 'Create Player', new_player_path
-
+- if policy(current_league).update?
+  - if current_league.active
+    p= button_to 'End Free Agency', finish_league_path(current_league)
+  - else
+    p= button_to 'Start Free Agency', start_league_path(current_league)
 = render 'shared/player_filter', players: @players
 table#player-table.tablesorter
   thead
@@ -11,13 +14,15 @@ table#player-table.tablesorter
       th Weight
       th Age
       th Experience
+      th Top Bidder
   tbody
     - @players.each do |player|
       tr
         td= player.number
-        td= link_to player.full_name, player_path(player)
+        td= link_to player.full_name, league_player_path(league_id: params[:league_id], id: player.id)
         td.position= player.position
         td= player.height_display
         td= player.weight
         td= player.age
         td= player.experience_display
+        td= top_bidder(player, params[:league_id])

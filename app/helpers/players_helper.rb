@@ -11,4 +11,8 @@ module PlayersHelper
   def positions(players)
     players.map(&:position).uniq.sort
   end
+
+  def player_positions
+    ['QB', 'RB', 'WR', 'TE', 'DL', 'LB', 'DB', 'K', 'P']
+  end
 end

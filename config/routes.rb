@@ -8,14 +8,14 @@ Rails.application.routes.draw do
       resources :bids, only: [:new, :create]
     end
     resources :invitations, only: [:index, :new, :create]
-    resources :players, only: [:index, :show]
+    resources :players, only: [:index, :show], controller: :league_players
     member do
       post 'start'
       post 'finish'
     end
   end
-
   resources :memberships, only: :create
+  resources :players
   resources :users, only: :none do
     resources :leagues, only: :index
     resources :invitations, only: [:show, :index]
