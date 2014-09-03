@@ -34,7 +34,9 @@ class Bid < ActiveRecord::Base
   def can_place_bid
     old_bid = self.player.top_bid(self.team.league_id)
 
-    if self.team.remaining_salary < self.amount - (amount_was || 0)
+    if self.amount <= 0
+      errors.add(:amount, 'must be greater than zero')
+    elsif self.team.remaining_salary < self.amount - (amount_was || 0)
       errors.add(:amount, 'cannot exceed remaining salary')
     elsif old_bid && self.amount <= old_bid.amount
       errors.add(:amount, 'must be greater than current bid')
