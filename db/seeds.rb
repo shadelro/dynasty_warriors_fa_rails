@@ -53,3 +53,33 @@ players_on_rosters = [
 Player.all.each do |player|
   player.destroy if players_on_rosters.include? "#{player.first_name} #{player.last_name}"
 end
+
+Player.find_or_create_by(
+  first_name: 'Jace',
+  last_name: 'Amaro ',
+  position: 'TE',
+  height: 80,
+  weight: 260,
+  age: 22,
+  experience: 0
+)
+Player.find_or_create_by(
+  first_name: 'Mike',
+  last_name: 'Tolbert',
+  position: 'RB',
+  number: 35,
+  height: 69,
+  weight: 243,
+  age: 28,
+  experience: 2
+)
+Player.find_or_create_by(
+  first_name: 'Geno',
+  last_name: 'Smith',
+  position: 'QB',
+  number: 7,
+  height: 75,
+  weight: 220,
+  age: 23,
+  experience: 1
+)
