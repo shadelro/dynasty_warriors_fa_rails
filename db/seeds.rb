@@ -28,7 +28,7 @@ players_on_rosters = [
   "Danny Woodhead", "Ben Tate", "Aldon Smith", "Anquan Boldin", "Muhammad Wilkerson", "Tyrann Mathieu",
   "Christine Michael", "Philip Rivers", "Jeremy Maclin", "Charles Clay", "Zac Stacy", "Brian Hartline",
   "Calais Campbell", "Jordan Reed", "Daryl Smith", "Knowshon Moreno", "Michael Floyd", "Cecil Shorts", "Bernard Pierce",
-  "Olivier Vernon", "Osi Umenyiora", "Lance Briggs", "Robert Griffin III", "Eddie Royal", "Danny Trevathan",
+  "Olivier Vernon", "Osi Umenyiora", "Lance Briggs", "Robert Griffin", "Eddie Royal", "Danny Trevathan",
   "Ryan Tannehill", "Tim Wright", "Mike Wallace", "Devonta Freeman", "Michael Johnson", "Bishop Sankey", "Khalil Mack",
   "Terrance Williams", "Jeremy Hill", "Jordan Matthews", "Mike Evans", "Johnny Manziel", "Lorenzo Taliaferro",
   "Carlos Hyde", "Odell Beckham Jr", "Ryan Shazier", "Kelvin Benjamin", "Marquise Lee", "Storm Johnson",
