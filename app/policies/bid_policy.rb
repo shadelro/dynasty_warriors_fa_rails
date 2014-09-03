@@ -23,7 +23,4 @@ class BidPolicy
     create?
   end
 
-  def destroy?
-    create?
-  end
 end

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :leagues, only: [:show, :new, :create] do
     resources :teams, only: [:show, :index, :new, :create, :edit, :update] do
-      resources :bids, only: [:new, :create, :edit, :update, :destroy]
+      resources :bids, only: [:new, :create]
     end
     resources :invitations, only: [:index, :new, :create]
     resources :players, only: [:index, :show]

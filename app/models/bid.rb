@@ -16,16 +16,24 @@ class Bid < ActiveRecord::Base
 
   after_save :update_remaining_salary
 
-  validate :team_has_sufficient_salary
+  validate :can_place_bid
 
   def update_remaining_salary
+    old_bid = self.player.top_bid(self.team.league_id)
+    old_team = old_bid.team
+    old_team.remaining_salary += old_bid.amount
+    old_team.save
+    old_bid.destroy
+
     self.team.remaining_salary -= self.amount - (amount_was || 0)
     self.team.save
   end
 
-  def team_has_sufficient_salary
+  def can_place_bid
     if self.team.remaining_salary < self.amount - (amount_was || 0)
-      errors.add(:amount, "team doesn't have enough salary")
+      errors.add(:amount, 'cannot exceed remaining salary')
+    elsif self.amount <= self.player.top_bid(self.team.league_id).amount
+      errors.add(:amount, 'must be greater than current bid')
     end
   end
 end
