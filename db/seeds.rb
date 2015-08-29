@@ -42,6 +42,12 @@ players_on_teams = [
 
 players_on_teams.each do |name|
   names = name.split(' ')
-  p = Player.find_by(first_name: names[0], last_name: names[1])
-  p.destroy if p
+  players = Player.where(first_name: names[0], last_name: names[1])
+  if players.count == 1
+    players.first.destroy
+  elsif players.count > 1
+    print "ERROR: Multiple players found for #{name} - please resolve manually.\n"
+  else
+    print "WARNING: Could not find #{name} in the player base.\n"
+  end
 end
