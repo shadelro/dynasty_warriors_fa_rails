@@ -37,7 +37,11 @@ players_on_teams = [
   "Jelani Jenkins", "Von Miller", "Bobby Wagner", "Karlos Dansby", "Mychal Kendricks", "Sio Moore", "Khalil Mack",
   "Chris Kirksey", "DeMarcus Ware", "Willie Young", "Paul Posluszny", "Jerod Mayo", "Ryan Shazier", "Vontaze Burfict",
   "Danny Trevathan", "Jadeveon Clowney", "NaVorro Bowman", "Sean Lee", "Kiko Alonso", "Eric Kendricks", "Vic Beasley",
-  "Randy Gregory"
+  "Randy Gregory", "Tyler Lockett", "Phillip Dorsett", "Dorial Green-Beckham", "Nelson Agholor", "Breshad Perriman",
+  "Amari Cooper", "Devin Funchess", "Kevin White", "Jaelen Strong", "Melvin Gordon", "Karlos WIlliams", "Javorius Allen",
+  "Josh Robinson", "Duke Johnson", "T.J. Yeldon", "Todd Gurley", "Tevin Coleman", "Stephen Gostkowski", "Cody Parkey",
+  "Adam Vinatieri", "Dan Bailey", "Matt Bryant", "Justin Tucker", "Graham Gano", "Chandler Catanzaro", "Mike Nugent",
+  "Phil Dawson"
 ]
 
 players_on_teams.each do |name|
