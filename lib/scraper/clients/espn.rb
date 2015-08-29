@@ -18,6 +18,7 @@ module Scraper
 
           Player.find_or_initialize_by(first_name: first_name, last_name: last_name).tap { |player|
             player.assign_attributes(
+              nfl_team: team_name.capitalize,
               number: text_to_int(attributes[0]),
               position: text_to_position(attributes[2]),
               age: text_to_int(attributes[3]),
@@ -70,7 +71,7 @@ module Scraper
           bills: {short_name: 'buf', full_name: 'buffalo-bills'},
           dolphins: {short_name: 'mia', full_name: 'miami-dolphins'},
           patriots: {short_name: 'ne', full_name: 'new-england-patriots'},
-          jets: {short_name: 'nyc', full_name: 'new-york-jets'},
+          jets: {short_name: 'nyj', full_name: 'new-york-jets'},
           broncos: {short_name: 'den', full_name: 'denver-broncos'},
           chiefs: {short_name: 'kc', full_name: 'kansas-city-chiefs'},
           raiders: {short_name: 'oak', full_name: 'oakland-raiders'},

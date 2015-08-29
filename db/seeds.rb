@@ -10,76 +10,69 @@ scraper = Scraper::Scraper.new
   scraper.team_roster(team).map(&:save)
 end
 
-players_on_rosters = [
-  "Russell Wilson", "Aaron Rodgers", "Alex Smith", "Andrew Luck", "Cam Newton", "Colin Kaepernick", "Matt Forte",
-  "Pierre Thomas", "Marshawn Lynch", "Doug Martin", "Adrian Peterson", "Steven Jackson", "DeMarco Murray",
-  "Giovani Bernard", "Chris Johnson", "Eddie Lacy", "Arian Foster", "Joique Bell", "Calvin Johnson", "Larry Fitzgerald",
-  "Torrey Smith", "Demaryius Thomas", "Antonio Brown", "Roddy White", "Julio Jones", "Marques Colston",
-  "Cordarrelle Patterson", "Pierre Garcon", "Kendall Wright", "Reggie Wayne", "Julius Thomas", "Greg Olsen",
-  "Delanie Walker", "Jimmy Graham", "Jordan Cameron", "Vernon Davis", "Reggie Bush", "Tavon Austin", "Darren Sproles",
-  "Keenan Allen", "Danny Amendola", "Julian Edelman", "Jerrell Freeman", "Luke Kuechly", "James Laurinaitis",
-  "Bobby Wagner", "A.J. Hawk", "Paul Posluszny", "Robert Quinn", "Carlos Dunlap", "Chandler Jones", "Lamarr Houston",
-  "Greg Hardy", "Sheldon Richardson", "Johnathan Cyprien", "Harrison Smith", "Earl Thomas", "Barry Church",
-  "Eric Berry", "T.J. Ward", "Jerod Mayo", "Vontaze Burfict", "Antrel Rolle", "Alec Ogletree", "DeMarcus Ware",
-  "Derrick Johnson", "Steven Hauschka", "Dan Bailey", "Justin Tucker", "Lamar Miller", "Ryan Succop", "Adam Vinatieri",
-  "Rob Gronkowski", "Ray Rice", "Matt Ryan", "Eric Decker", "Chris Ivory", "Hakeem Nicks", "Shane Vereen",
-  "Charles Johnson", "Wes Welker", "Rueben Randle", "Tony Romo", "Ahmad Bradshaw", "Michael Crabtree",
-  "Patrick Peterson", "DeSean Jackson", "DeAndre Hopkins", "Fred Jackson", "Eli Manning", "Percy Harvin", "Andy Dalton",
-  "Danny Woodhead", "Ben Tate", "Aldon Smith", "Anquan Boldin", "Muhammad Wilkerson", "Tyrann Mathieu",
-  "Christine Michael", "Philip Rivers", "Jeremy Maclin", "Charles Clay", "Zac Stacy", "Brian Hartline",
-  "Calais Campbell", "Jordan Reed", "Daryl Smith", "Knowshon Moreno", "Michael Floyd", "Cecil Shorts", "Bernard Pierce",
-  "Olivier Vernon", "Osi Umenyiora", "Lance Briggs", "Robert Griffin", "Eddie Royal", "Danny Trevathan",
-  "Ryan Tannehill", "Tim Wright", "Mike Wallace", "Devonta Freeman", "Michael Johnson", "Bishop Sankey", "Khalil Mack",
-  "Terrance Williams", "Jeremy Hill", "Jordan Matthews", "Mike Evans", "Johnny Manziel", "Lorenzo Taliaferro",
-  "Carlos Hyde", "Odell Beckham", "Ryan Shazier", "Kelvin Benjamin", "Marqise Lee", "Storm Johnson", "Darqueze Dennard",
-  "Charles Sims", "Calvin Pryor", "Terrance West", "Jimmie Ward", "Davante Adams", "Teddy Bridgewater", "Logan Thomas",
-  "Tom Brady", "Jay Cutler", "Matthew Stafford", "Peyton Manning", "Montee Ball", "Alfred Morris", "Jamaal Charles",
-  "LeSean McCoy", "Rashad Jennings", "Frank Gore", "C.J. Spiller", "Le'Veon Bell", "Brandon Marshall", "Dez Bryant",
-  "Vincent Jackson", "A.J. Green", "Andre Johnson", "Jordy Nelson", "T.Y. Hilton", "Alshon Jeffery", "Antonio Gates",
-  "Kyle Rudolph", "Jared Cook", "Martellus Bennett", "Emmanuel Sanders", "Greg Jennings", "Ryan Mathews", "Victor Cruz",
-  "Karlos Dansby", "D'Qwell Jackson", "Stephen Tulloch", "Lavonte David", "J.J. Watt", "Rob Ninkovich", "Tracy Porter",
-  "Jurrell Casey", "Morgan Burnett", "Troy Polamalu", "Charles Woodson", "DeAngelo Hall", "Laron Landry", "Eric Weddle",
-  "Jay Feely", "Curtis Lofton", "Stephen Gotskowski", "Matt Bryant", "Darren McFadden", "Matt Prater",
-  "Trent Richardson", "Drew Brees", "Steve Smith", "Randall Cobb", "Stevan Ridley", "BenJarvus Green-Ellis",
-  "Steve Johnson", "DeAngelo Williams", "Jason Witten", "Tyler Eifert", "Golden Tate", "Kam Chancellor",
-  "NaVorro Bowman", "Jason Pierre-Paul", "Garrett Graham", "Anthony Spencer", "James Jones", "Mike Nugent",
-  "Elvis Dumervil", "Robert Woods", "Aaron Dobson", "Lawrence Timmons", "Sammy Watkins", "Maurice Jones-Drew",
-  "EJ Manuel", "Bilal Powell", "Brandin Cooks", "Kenbrell Thompkins", "LeGarrette Blount", "Kenny Stills",
-  "Austin Seferian-Jenkins", "Andre Ellington", "HaHa Clinton-Dix", "Jadaveon Clowney", "Isaiah Crowell", "Nick Foles",
-  "Blake Bortles", "C.J. Mosley", "Eric Ebron", "Tre Mason", "Justin Gilbert", "Aaron Donald", "Martavis Bryant",
-  "Kadeem Carey", "Chris Kirksey", "Josh Gordon", "Kiko Alonso", "Sean Lee"
+players_on_teams = [
+  "Aaron Rodgers", "Andrew Luck", "Peyton Manning", "Russell Wilson", "Ben Roethlisberger", "Drew Brees", "Tom Brady",
+  "Matt Ryan", "Eli Manning", "Ryan Tannehill", "Tony Romo", "Philip Rivers", "Joe Flacco", "Jay Cutler", "Matthew Stafford",
+  "Colin Kaepernick", "Cam Newton", "Andy Dalton", "Teddy Bridgewater", "Nick Foles", "Carson Palmer", "Johnny Manziel",
+  "Jameis Winston", "Garrett Grayson", "Marcus Mariota", "Le'Veon Bell", "DeMarco Murray", "Matt Forte", "Marshawn Lynch",
+  "Arian Foster", "Eddie Lacy", "Jamaal Charles", "Justin Forsett", "Lamar Miller", "Jeremy Hill", "C.J. Anderson",
+  "LeSean McCoy", "Joique Bell", "Mark Ingram", "Giovani Bernard", "Alfred Morris", "Fred Jackson", "Andre Ellington",
+  "Shane Vereen", "Frank Gore", "Darren Sproles", "Chris Ivory", "Andre Williams", "Rashad Jennings", "Tre Mason",
+  "Isaiah Crowell", "Darren McFadden", "Denard Robinson", "Chris Johnson", "Terrance West", "Jerick McKinnon",
+  "LeGarrette Blount", "Latavius Murray", "Bishop Sankey", "Devonta Freeman", "Doug Martin", "Lorenzo Taliaferro",
+  "C.J. Spiller", "Ryan Mathews", "Carlos Hyde", "Joseph Randle", "Charles Sims", "Montee Ball", "Danny Woodhead",
+  "Adrian Peterson", "David Johnson", "Jeremy Langford", "Jay Ajayi", "David Cobb", "Ameer Abdullah", "Antonio Brown",
+  "Demaryius Thomas", "Jordy Nelson", "Dez Bryant", "Emmanuel Sanders", "Odell Beckham Jr.", "Julio Jones", "Randall Cobb",
+  "Jeremy Maclin", "T.Y. Hilton", "Golden Tate", "Alshon Jeffery", "Mike Evans", "DeAndre Hopkins", "Calvin Johnson",
+  "Julian Edelman", "Steve Smith Sr.", "Kelvin Benjamin", "Anquan Boldin", "DeSean Jackson", "Roddy White", "A.J. Green",
+  "Brandon LaFell", "Mike Wallace", "Eric Decker", "Sammy Watkins", "Jordan Matthews", "Andre Johnson", "Torrey Smith",
+  "Brandon Marshall", "Vincent Jackson", "Jarvis Landry", "Keenan Allen", "Kenny Stills", "Kendall Wright", "Michael Floyd",
+  "Pierre Garcon", "Michael Crabtree", "Terrance Williams", "Brandin Cooks", "Martavis Bryant", "Allen Robinson", "Davante Adams",
+  "Donte Moncrief", "Charles Johnson", "Victor Cruz", "Josh Gordon", "Justin Hardy", "Devin Smith", "DeVante Parker",
+  "Rob Gronkowski", "Jimmy Graham", "Greg Olsen", "Antonio Gates", "Martellus Bennett", "Travis Kelce", "Delanie Walker",
+  "Julius Thomas", "Jason Witten", "Heath Miller", "Larry Donnell", "Zach Ertz", "Owen Daniels", "Jordan Reed",
+  "Kyle Rudolph", "Eric Ebron", "Austin Seferian-Jenkins", "Ladarius Green", "Virgil Green", "Tyler Eifert", "Clive Walford",
+  "Maxx Williams", "Luke Kuechly", "D'Qwell Jackson", "DeAndre Levy", "Justin Houston", "Lavonte David", "Jamie Collins",
+  "Paul Worrilow", "C.J. Mosley", "David Harris", "Curtis Lofton", "Daryl Smith", "Lawrence Timmons", "Brandon Marshall",
+  "Jelani Jenkins", "Von Miller", "Bobby Wagner", "Karlos Dansby", "Mychal Kendricks", "Sio Moore", "Khalil Mack",
+  "Chris Kirksey", "DeMarcus Ware", "Willie Young", "Paul Posluszny", "Jerod Mayo", "Ryan Shazier", "Vontaze Burfict",
+  "Danny Trevathan", "Jadeveon Clowney", "NaVorro Bowman", "Sean Lee", "Kiko Alonso", "Eric Kendricks", "Vic Beasley",
+  "Randy Gregory"
 ]
 
-Player.all.each do |player|
-  player.destroy if players_on_rosters.include? "#{player.first_name} #{player.last_name}"
+players_on_teams.each do |name|
+  names = name.split(' ')
+  p = Player.find_by(first_name: names[0], last_name: names[1])
+  p.destroy
 end
 
-Player.find_or_create_by(
-  first_name: 'Jace',
-  last_name: 'Amaro',
-  position: 'TE',
-  height: 78,
-  weight: 260,
-  age: 22,
-  experience: 0
-)
-Player.find_or_create_by(
-  first_name: 'Mike',
-  last_name: 'Tolbert',
-  position: 'RB',
-  number: 35,
-  height: 69,
-  weight: 243,
-  age: 28,
-  experience: 2
-)
-Player.find_or_create_by(
-  first_name: 'Geno',
-  last_name: 'Smith',
-  position: 'QB',
-  number: 7,
-  height: 73,
-  weight: 220,
-  age: 23,
-  experience: 1
-)
+
+# Player.find_or_create_by(
+#   first_name: 'Jace',
+#   last_name: 'Amaro',
+#   position: 'TE',
+#   height: 78,
+#   weight: 260,
+#   age: 22,
+#   experience: 0
+# )
+# Player.find_or_create_by(
+#   first_name: 'Mike',
+#   last_name: 'Tolbert',
+#   position: 'RB',
+#   number: 35,
+#   height: 69,
+#   weight: 243,
+#   age: 28,
+#   experience: 2
+# )
+# Player.find_or_create_by(
+#   first_name: 'Geno',
+#   last_name: 'Smith',
+#   position: 'QB',
+#   number: 7,
+#   height: 73,
+#   weight: 220,
+#   age: 23,
+#   experience: 1
+# )

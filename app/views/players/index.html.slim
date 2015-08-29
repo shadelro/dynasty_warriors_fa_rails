@@ -9,6 +9,7 @@ table#player-table.tablesorter
     tr
       th #
       th Name
+      th NFL Team
       th Position
       th Height
       th Weight
@@ -20,6 +21,7 @@ table#player-table.tablesorter
       tr
         td= player.number
         td= link_to player.full_name, league_player_path(league_id: params[:league_id], id: player.id)
+        td= player.nfl_team
         td.position= player.position
         td= player.height_display
         td= player.weight
