@@ -17,25 +17,49 @@ module Scraper
           attributes = row.css('td')
           first_name, last_name = text_to_string(attributes[1]).split(' ')
 
-          player = Player.find_or_initialize_by(
+          player = Player.find_by(
             first_name: first_name,
             last_name: last_name,
             nfl_team: team_name.capitalize
           )
 
-          player.assign_attributes(
-            nfl_team: team_name.capitalize,
-            number: text_to_int(attributes[0]),
-            position: text_to_position(attributes[2]),
-            age: text_to_int(attributes[3]),
-            height: text_to_height(attributes[4]),
-            weight: text_to_int(attributes[5]),
-            experience: text_to_exp(attributes[6])
-          )
-          player
-        }
+          if player
+            nil
+          else
+            player = Player.new(
+              first_name: first_name,
+              last_name: last_name,
+              nfl_team: team_name.capitalize,
+              number: text_to_int(attributes[0]),
+              position: text_to_position(attributes[2]),
+              age: text_to_int(attributes[3]),
+              height: text_to_height(attributes[4]),
+              weight: text_to_int(attributes[5]),
+              experience: text_to_exp(attributes[6])
+            )
+            player
+          end
 
-        players.select { |player| %W(QB RB WR TE DL LB DB K).include? player.position }
+          # player = Player.find_or_initialize_by(
+          #   first_name: first_name,
+          #   last_name: last_name,
+          #   nfl_team: team_name.capitalize
+          # )
+
+          # player.assign_attributes(
+          #   nfl_team: team_name.capitalize,
+          #   number: text_to_int(attributes[0]),
+          #   position: text_to_position(attributes[2]),
+          #   age: text_to_int(attributes[3]),
+          #   height: text_to_height(attributes[4]),
+          #   weight: text_to_int(attributes[5]),
+          #   experience: text_to_exp(attributes[6])
+          # )
+          # player
+        }.compact
+
+        # players.select { |player| %W(QB RB WR TE DL LB DB K).include? player.position }
+        players.select { |player| %W(DB).include? player.position }
       end
 
       private
@@ -52,7 +76,7 @@ module Scraper
         position = text_to_string(attribute)
         if position == 'DT' || position == 'DE'
           'DL'
-        elsif position == 'CB' || position == 'S'
+        elsif position == 'CB' || position == 'S' || position == 'SS' || position == 'FS'
           'DB'
         elsif position == 'PK'
           'K'
