@@ -1,0 +1,21 @@
+defaults: &defaults
+  adapter: postgresql
+  encoding: unicode
+  username: dynasy_warriors
+  password:
+
+development:
+  <<: *defaults
+  database: dynasty_warriors
+
+test:
+  <<: *defaults
+  database: dynasy_warriors_test
+
+production:
+  <<: *defaults
+  host: <%= ENV['DYNASTY_WARRIORS_DB_HOST'] %>
+  port: <%= ENV['DYNASTY_WARRIORS_DB_PORT'] %>
+  database: <%= ENV['DYNASTY_WARRIORS_DB_NAME'] %>
+  username: <%= ENV['DYNASTY_WARRIORS_DB_USERNAME'] %>
+  password: <%= ENV['DYNASTY_WARRIORS_DB_PASSWORD'] %>
