@@ -13,48 +13,62 @@ scraper = Scraper::Scraper.new
   end
 end
 
-# players_on_teams = [
-#   "Aaron Rodgers", "Andrew Luck", "Peyton Manning", "Russell Wilson", "Ben Roethlisberger", "Drew Brees", "Tom Brady",
-#   "Matt Ryan", "Eli Manning", "Ryan Tannehill", "Tony Romo", "Philip Rivers", "Joe Flacco", "Jay Cutler", "Matthew Stafford",
-#   "Colin Kaepernick", "Cam Newton", "Andy Dalton", "Teddy Bridgewater", "Nick Foles", "Carson Palmer", "Johnny Manziel",
-#   "Jameis Winston", "Garrett Grayson", "Marcus Mariota", "Le'Veon Bell", "DeMarco Murray", "Matt Forte", "Marshawn Lynch",
-#   "Arian Foster", "Eddie Lacy", "Jamaal Charles", "Justin Forsett", "Lamar Miller", "Jeremy Hill", "C.J. Anderson",
-#   "LeSean McCoy", "Joique Bell", "Mark Ingram", "Giovani Bernard", "Alfred Morris", "Fred Jackson", "Andre Ellington",
-#   "Shane Vereen", "Frank Gore", "Darren Sproles", "Chris Ivory", "Andre Williams", "Rashad Jennings", "Tre Mason",
-#   "Isaiah Crowell", "Darren McFadden", "Denard Robinson", "Chris Johnson", "Terrance West", "Jerick McKinnon",
-#   "LeGarrette Blount", "Latavius Murray", "Bishop Sankey", "Devonta Freeman", "Doug Martin", "Lorenzo Taliaferro",
-#   "C.J. Spiller", "Ryan Mathews", "Carlos Hyde", "Joseph Randle", "Charles Sims", "Montee Ball", "Danny Woodhead",
-#   "Adrian Peterson", "David Johnson", "Jeremy Langford", "Jay Ajayi", "David Cobb", "Ameer Abdullah", "Antonio Brown",
-#   "Demaryius Thomas", "Jordy Nelson", "Dez Bryant", "Emmanuel Sanders", "Odell Beckham Jr.", "Julio Jones", "Randall Cobb",
-#   "Jeremy Maclin", "T.Y. Hilton", "Golden Tate", "Alshon Jeffery", "Mike Evans", "DeAndre Hopkins", "Calvin Johnson",
-#   "Julian Edelman", "Steve Smith Sr.", "Kelvin Benjamin", "Anquan Boldin", "DeSean Jackson", "Roddy White", "A.J. Green",
-#   "Brandon LaFell", "Mike Wallace", "Eric Decker", "Sammy Watkins", "Jordan Matthews", "Andre Johnson", "Torrey Smith",
-#   "Brandon Marshall", "Vincent Jackson", "Jarvis Landry", "Keenan Allen", "Kenny Stills", "Kendall Wright", "Michael Floyd",
-#   "Pierre Garcon", "Michael Crabtree", "Terrance Williams", "Brandin Cooks", "Martavis Bryant", "Allen Robinson", "Davante Adams",
-#   "Donte Moncrief", "Charles Johnson", "Victor Cruz", "Josh Gordon", "Justin Hardy", "Devin Smith", "DeVante Parker",
-#   "Rob Gronkowski", "Jimmy Graham", "Greg Olsen", "Antonio Gates", "Martellus Bennett", "Travis Kelce", "Delanie Walker",
-#   "Julius Thomas", "Jason Witten", "Heath Miller", "Larry Donnell", "Zach Ertz", "Owen Daniels", "Jordan Reed",
-#   "Kyle Rudolph", "Eric Ebron", "Austin Seferian-Jenkins", "Ladarius Green", "Virgil Green", "Tyler Eifert", "Clive Walford",
-#   "Maxx Williams", "Luke Kuechly", "D'Qwell Jackson", "DeAndre Levy", "Justin Houston", "Lavonte David", "Jamie Collins",
-#   "Paul Worrilow", "C.J. Mosley", "David Harris", "Curtis Lofton", "Daryl Smith", "Lawrence Timmons", "Brandon Marshall",
-#   "Jelani Jenkins", "Von Miller", "Bobby Wagner", "Karlos Dansby", "Mychal Kendricks", "Sio Moore", "Khalil Mack",
-#   "Chris Kirksey", "DeMarcus Ware", "Willie Young", "Paul Posluszny", "Jerod Mayo", "Ryan Shazier", "Vontaze Burfict",
-#   "Danny Trevathan", "Jadeveon Clowney", "NaVorro Bowman", "Sean Lee", "Kiko Alonso", "Eric Kendricks", "Vic Beasley",
-#   "Randy Gregory", "Tyler Lockett", "Phillip Dorsett", "Dorial Green-Beckham", "Nelson Agholor", "Breshad Perriman",
-#   "Amari Cooper", "Devin Funchess", "Kevin White", "Jaelen Strong", "Melvin Gordon", "Karlos WIlliams", "Javorius Allen",
-#   "Josh Robinson", "Duke Johnson", "T.J. Yeldon", "Todd Gurley", "Tevin Coleman", "Stephen Gostkowski", "Cody Parkey",
-#   "Adam Vinatieri", "Dan Bailey", "Matt Bryant", "Justin Tucker", "Graham Gano", "Chandler Catanzaro", "Mike Nugent",
-#   "Phil Dawson"
-# ]
+players_on_teams = [
+   "A.J. Green", "Aaron Donald", "Aaron Rodgers", "Adrian Peterson", "Alec Ogletree", "Alex Collins",
+   "Alfred Morris", "Allen Hurns", "Allen Robinson", "Alshon Jeffery", "Amari Cooper", "Ameer Abdullah",
+   "Andre Ellington", "Andrew Luck", "Andy Dalton", "Antonio Brown", "Antwon Blake", "Arian Foster",
+   "Austin Hooper", "Austin Seferian-Jenkins", "Barry Church", "Ben Roethlisberger", "Benjamin Watson",
+   "Blake Bortles", "Bobby Wagner", "Brandin Cooks", "Brandon Marshall", "Brandon Marshall",
+   "Brandon McManus", "Braxton Miller", "Breshad Perriman", "Brock Osweiler", "C.J. Anderson",
+   "C.J. Mosley", "C.J. Prosise", "C.J. Spiller", "Cairo Santos", "Cameron Wake", "Cardale Jones",
+   "Carlos Dunlap", "Carlos Hyde", "Carson Palmer", "Carson Wentz", "Chandler Catanzaro", "Chandler Jones",
+   "Charcandrick West", "Charles Clay", "Chris Ivory", "Chris Johnson", "Chris Moore", "Christian Kirksey",
+   "Clive Walford", "Corey Coleman", "Corey Graham", "D'Qwell Jackson", "Danny Woodhead", "Darren Sproles",
+   "Daryl Smith", "David Johnson", "DeAndre Hopkins", "DeAndre Washington", "DeAngelo Hall",
+   "DeAngelo Williams", "Delanie Walker", "DeMarco Murray", "Demaryius Thomas", "Deone Bucannon",
+   "Derek Carr", "Derrick Henry", "Derrick Johnson", "DeSean Jackson", "DeVante Parker", "Devin Funchess",
+   "Devonta Freeman", "Devontae Booker", "Dez Bryant", "Dion Lewis", "Donte Moncrief",
+   "Dorial Green-Beckham", "Doug Baldwin", "Doug Martin", "Drew Brees", "Duke Johnson Jr.", "Dwayne Allen",
+   "Eddie Lacy", "Eli Apple", "Eli Manning", "Emmanuel Sanders", "Eric Decker", "Eric Ebron",
+   "Eric Kendricks", "Eric Weddle", "Ezekiel Ansah", "Ezekiel Elliott", "Fletcher Cox", "Frank Gore",
+   "Gary Barnidge", "Giovani Bernard", "Golden Tate", "Graham Gano", "Greg Olsen", "Ha Ha Clinton-Dix",
+   "Harrison Smith", "Hunter Henry", "Isaiah Crowell", "J.J. Watt", "Jacob Tamme", "Jadeveon Clowney",
+   "Jaelen Strong", "Jalen Ramsey", "Jamaal Charles", "Jameis Winston", "James Laurinaitis",
+   "James Starks", "Jamie Collins", "Jared Goff", "Jarvis Landry", "Jason Pierre-Paul", "Javorius Allen",
+   "Jay Ajayi", "Jay Cutler", "Jaylon Smith", "Jeremy Hill", "Jeremy Langford", "Jeremy Maclin",
+   "Jimmy Graham", "Joe Flacco", "Joey Bosa", "John Brown", "Jonathan Williams", "Jordan Howard",
+   "Jordan Matthews", "Jordan Reed", "Jordy Nelson", "Josh Doctson", "Josh Gordon", "Julian Edelman",
+   "Julio Jones", "Julius Thomas", "Jurrell Casey", "Justin Forsett", "Justin Houston", "Justin Tucker",
+   "Kam Chancellor", "Karl Joseph", "Karlos Williams", "Keanu Neal", "Keenan Allen", "Keith Marshall",
+   "Kelvin Benjamin", "Kendall Wright", "Kenneth Dixon", "Kenyan Drake", "Kevin White", "Khalil Mack",
+   "Kirk Cousins", "Kurt Coleman", "Kwon Alexander", "Kyle Rudolph", "Lamar Miller", "Landon Collins",
+   "Laquon Treadwell", "Larry Fitzgerald", "Latavius Murray", "Lavonte David", "Le'Veon Bell",
+   "Leonard Floyd", "Leonte Carroo", "LeSean McCoy", "Luke Kuechly", "Malcolm Smith", "Marcus Mariota",
+   "Mark Ingram", "Markus Wheaton", "Martavis Bryant", "Martellus Bennett", "Marvin Jones", "Matt Bryant",
+   "Matt Forte", "Matt Jones", "Matt Ryan", "Matthew Stafford", "Melvin Gordon", "Michael Bennett",
+   "Michael Crabtree", "Michael Floyd", "Michael Thomas", "Mike Evans", "Mike Nugent",
+   "Muhammad Wilkerson", "Myles Jack", "Nelson Agholor", "Nick Foles", "Nick Vannett", "Odell Beckham Jr.",
+   "Paul Perkins", "Paul Posluszny", "Paul Worrilow", "Paxton Lynch", "Pharoh Cooper", "Philip Rivers",
+   "Phillip Dorsett", "Preston Brown", "Randall Cobb", "Rashad Jennings", "Rashard Higgins",
+   "Reshad Jones", "Rob Gronkowski", "Rob Ninkovich", "Robbie Gould", "Robert Quinn", "Roberto Aguayo",
+   "Russell Wilson", "Ryan Mathews", "Ryan Shazier", "Ryan Tannehill", "Sam Bradford", "Sammy Watkins",
+   "Sean Lee", "Shane Vereen", "Stefon Diggs", "Stephen Gostkowski", "Sterling Shepard", "Steve Smith Sr.",
+   "T.J. Yeldon", "T.Y. Hilton", "Tavon Austin", "Teddy Bridgewater", "Telvin Smith", "Terrance Williams",
+   "Tevin Coleman", "Theo Riddick", "Thomas Davis", "Thomas Rawls", "Todd Gurley", "Tony Jefferson",
+   "Travis Benjamin", "Travis Kelce", "Tyler Boyd", "Tyler Eifert", "Tyler Ervin", "Tyler Higbee",
+   "Tyler Lockett", "Tyrann Mathieu", "Tyrod Taylor", "Vernon Davis", "Vernon Hargreaves III",
+   "Victor Cruz", "Vincent Jackson", "Vincent Rey", "Von Miller", "Wendell Smallwood", "Will Fuller",
+   "William Jackson III", "Willie Snead", "Zach Ertz", "Zach Zenner"
+]
 
-# players_on_teams.each do |name|
-#   names = name.split(' ')
-#   players = Player.where(first_name: names[0], last_name: names[1])
-#   if players.count == 1
-#     players.first.destroy
-#   elsif players.count > 1
-#     print "ERROR: Multiple players found for #{name} - please resolve manually.\n"
-#   else
-#     print "WARNING: Could not find #{name} in the player base.\n"
-#   end
-# end
+players_on_teams.each do |name|
+  names = name.split(' ')
+  players = Player.where(first_name: names[0], last_name: names[1])
+  if players.count == 1
+    players.first.destroy
+  elsif players.count > 1
+    print "ERROR: Multiple players found for #{name} - please resolve manually.\n"
+  else
+    print "WARNING: Could not find #{name} in the player base.\n"
+  end
+end
